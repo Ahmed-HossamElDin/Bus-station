@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Vehicle">
+  <ClassDiagramComponents>
+    <Class name="Vehicle" package="" visibility="public" xPosition="135.0" yPosition="78.0">
+      <Fields>
+        <Field name="passengers" type="Max" visibility="private"/>
+        <Field name="seats" type="Available" visibility="private"/>
+        <Field name="seats" type="Booked" visibility="private"/>
+        <Field name="Driver" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="IsFull" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Bus" package="" visibility="public" xPosition="554.0" yPosition="129.0">
+      <Fields>
+        <Field name="number" type="Bus" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Minibus" package="" visibility="public" xPosition="170.0" yPosition="392.0">
+      <Fields>
+        <Field name="number" type="minibus" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Minibus" target="Vehicle"/>
+    <IsRelation name="is" source="Bus" target="Vehicle"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

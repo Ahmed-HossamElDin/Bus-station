@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Trip">
+  <ClassDiagramComponents>
+    <Class name="Trip" package="" visibility="public" xPosition="54.0" yPosition="14.0">
+      <Fields>
+        <Field name="to" type="String" visibility="private"/>
+        <Field name="from" type="String" visibility="private"/>
+        <Field name="typeOfVehicle" type="String" visibility="private"/>
+        <Field name="untitledField" type="Object" visibility="private"/>
+        <Field name="price" type="Double" visibility="private"/>
+        <Field name="distance" type="Double" visibility="private"/>
+        <Field name="numberOfStops" type="int" visibility="private"/>
+        <Field name="internal" type="Boolean" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

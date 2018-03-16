@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Passenger">
+  <ClassDiagramComponents>
+    <Class name="Passenger" package="" visibility="public" xPosition="204.0" yPosition="32.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="Trip" type="object" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Interface name="vip" package="" visibility="public" xPosition="596.0" yPosition="38.0">
+      <Methods>
+        <Method name="CalculatePrice" returnType="Double" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="regular" package="" visibility="public" xPosition="596.0" yPosition="239.0">
+      <Methods>
+        <Method name="CalculatePrice" returnType="Double" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Class name="Ticket" package="" visibility="public" xPosition="258.0" yPosition="439.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Passenger" target="vip"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Passenger" target="regular"/>
+    <HasRelation name="books" source="Passenger" target="Ticket" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ticket">
+  <ClassDiagramComponents>
+    <Class name="Ticket" package="" visibility="public" xPosition="196.0" yPosition="15.0">
+      <Fields>
+        <Field name="price" type="Double" visibility="private"/>
+        <Field name="TimeOfArrival" type="Object" visibility="private"/>
+        <Field name="TimeOfDeparture" type="Object" visibility="private"/>
+        <Field name="Number" type="int" visibility="private"/>
+        <Field name="goOnly" type="Boolean" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="CalculatePrice" returnType="Double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Child" package="" visibility="public" xPosition="626.0" yPosition="168.0">
+      <Methods>
+        <Method name="CalculatePrice" returnType="Double" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="Adult" package="" visibility="public" xPosition="626.0" yPosition="66.0">
+      <Methods>
+        <Method name="CalculatePrice" returnType="Double" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="Senior" package="" visibility="public" xPosition="626.0" yPosition="273.0">
+      <Methods>
+        <Method name="CalculatePrice" returnType="Double" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Ticket" target="Adult"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Ticket" target="Senior"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Ticket" target="Child"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
