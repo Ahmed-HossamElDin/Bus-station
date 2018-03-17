@@ -81,9 +81,20 @@ public class Employee_main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    
+     /* Login managerlogin = new Login();
+    
+        managerlogin.setVisible(true);
+        this.setVisible(false);*/
+   ManagerWindow managewindow = new ManagerWindow();
+      managewindow.setVisible(true);
+      this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    /*  Login employeelogin = new Login();
+        employeelogin.setVisible(true);
+        this.setVisible(false);*/
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
