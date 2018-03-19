@@ -72,7 +72,7 @@ public class App extends javax.swing.JFrame {
     }//GEN-LAST:event_PassengerActionPerformed
 
     private void EmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmployeeActionPerformed
-        Employee_main employeemwindow= new Employee_main();
+        EmployeeLogin employeemwindow= new EmployeeLogin();
         employeemwindow.setVisible(true);
                 this.setVisible(false);
 
