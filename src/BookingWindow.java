@@ -328,7 +328,7 @@ x++;
 x++;    }//GEN-LAST:event_jComboBox4ActionPerformed
 
     private void testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testActionPerformed
-String date = date1.getText();
+//String date = date1.getText();
 
     }//GEN-LAST:event_testActionPerformed
     

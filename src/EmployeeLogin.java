@@ -44,6 +44,7 @@ public class EmployeeLogin extends javax.swing.JFrame {
         jLabel2.setText("Password :");
 
         jButton1.setText("Login");
+        jButton1.setEnabled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -101,26 +102,29 @@ public class EmployeeLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
- password = jPasswordField1.getText();
- 
+password=jPasswordField1.getText();
+if(!jTextField1.getText().equals(null) || !jPasswordField1.getText().equals(null))jButton1.setEnabled(true);
+
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       /* if(Username.equals("ahmed")&&password.equals("123456"))
-{*/
+        if(jTextField1.getText().equals("ahmed")&&jPasswordField1.getText().equals("123456"))
+{
     ManagerWindow managewindow =new ManagerWindow();
     managewindow.setVisible(true);
     this.setVisible(false);
     
-/*}
+}
         else { JOptionPane.showMessageDialog(null,"Invalid login details!");
             
         }
-if(jTextField1.getText()!=null &&jPasswordField1.!=null)jButton1.setEnabled(true);*/
+if(!jTextField1.getText().equals(null) || !jPasswordField1.getText().equals(null))jButton1.setEnabled(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
- Username = jTextField1.getText();            
+ Username = jTextField1.getText();     
+ if(!jTextField1.getText().equals(null) || !jPasswordField1.getText().equals(null))jButton1.setEnabled(true);
+
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
