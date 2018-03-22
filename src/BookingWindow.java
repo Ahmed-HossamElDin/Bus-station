@@ -292,7 +292,7 @@ x++;
 
     private void jRadioButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton7ActionPerformed
 x++;
-if(x==6){
+if(x>=6){
     jButton1.setEnabled(true);
 }
         
