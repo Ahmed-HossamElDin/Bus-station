@@ -1,9 +1,19 @@
+
+import javax.swing.ComboBoxModel;
+import javax.swing.JComboBox;
+
+
 public class BookingWindow extends javax.swing.JFrame {
-int x=0;
- 
+
+    int x = 0; //flag to enable next button
+    int internal = 0; //internal flag
+    int vip = 0;  //vip flag
+    int oneway=0; //onewayflag
     public BookingWindow() {
         initComponents();
-        
+        jComboBox3e.setVisible(false);
+        jComboBox4e.setVisible(false);
+
     }
 
     /**
@@ -40,11 +50,21 @@ int x=0;
         date1 = new com.toedter.calendar.JDateChooser();
         date2 = new com.toedter.calendar.JDateChooser();
         test = new javax.swing.JButton();
+        ulabel = new javax.swing.JLabel();
+        ufield = new javax.swing.JTextField();
+        plabel = new javax.swing.JLabel();
+        pfield = new javax.swing.JPasswordField();
+        jComboBox4e = new javax.swing.JComboBox<>();
+        jComboBox3e = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Type of Customer :");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(59, 16, 120, 17);
 
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -54,6 +74,8 @@ int x=0;
                 jRadioButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jRadioButton1);
+        jRadioButton1.setBounds(208, 39, 42, 18);
 
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -63,9 +85,13 @@ int x=0;
                 jRadioButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jRadioButton2);
+        jRadioButton2.setBounds(443, 39, 68, 18);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Trip type :");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(59, 115, 64, 17);
 
         buttonGroup2.add(jRadioButton3);
         jRadioButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -75,49 +101,76 @@ int x=0;
                 jRadioButton3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jRadioButton3);
+        jRadioButton3.setBounds(223, 154, 68, 18);
 
         buttonGroup2.add(jRadioButton4);
         jRadioButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioButton4.setText("External");
+        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jRadioButton4);
+        jRadioButton4.setBounds(469, 154, 72, 18);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Date of Arrival :");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(381, 256, 95, 17);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("Date of Departure :");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(59, 256, 120, 17);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("From :");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(59, 378, 41, 17);
 
         jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cairo", "Alexandria", "Aswan", "Luxor", "Hurghada", "Sharm El-Sheikh", "6th of October", "Assiut", "Banha", "Menofia", "Giza" }));
         jComboBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jComboBox3);
+        jComboBox3.setBounds(156, 373, 153, 27);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("To :");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(381, 378, 25, 17);
 
         jComboBox4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cairo", "Alexandria", "Aswan", "Luxor", "Hurghada", "Sharm El-Sheikh", "6th of October", "Assiut", "Banha", "Menofia", "Giza" }));
         jComboBox4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox4ActionPerformed(evt);
             }
         });
+        getContentPane().add(jComboBox4);
+        jComboBox4.setBounds(441, 373, 153, 27);
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(179, 190, 0, 0);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel8.setText("Stops :");
+        jLabel8.setText("Number of stops :");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(59, 196, 111, 17);
 
         jComboBox5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3" }));
         jComboBox5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox5ActionPerformed(evt);
             }
         });
+        getContentPane().add(jComboBox5);
+        jComboBox5.setBounds(311, 201, 38, 27);
 
         buttonGroup3.add(jRadioButton6);
         jRadioButton6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -127,9 +180,13 @@ int x=0;
                 jRadioButton6ActionPerformed(evt);
             }
         });
+        getContentPane().add(jRadioButton6);
+        jRadioButton6.setBounds(167, 439, 77, 18);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel9.setText("Ticket type :");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(59, 439, 77, 17);
 
         buttonGroup3.add(jRadioButton7);
         jRadioButton7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -139,6 +196,8 @@ int x=0;
                 jRadioButton7ActionPerformed(evt);
             }
         });
+        getContentPane().add(jRadioButton7);
+        jRadioButton7.setBounds(167, 475, 78, 18);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Next");
@@ -148,6 +207,12 @@ int x=0;
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(59, 505, 123, 31);
+        getContentPane().add(date1);
+        date1.setBounds(69, 285, 181, 28);
+        getContentPane().add(date2);
+        date2.setBounds(426, 285, 186, 28);
 
         test.setText("test");
         test.addActionListener(new java.awt.event.ActionListener() {
@@ -155,173 +220,111 @@ int x=0;
                 testActionPerformed(evt);
             }
         });
+        getContentPane().add(test);
+        test.setBounds(373, 507, 48, 28);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(191, 191, 191)
-                                .addComponent(test))
-                            .addComponent(jLabel5)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(164, 164, 164)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRadioButton1)
-                                    .addComponent(jRadioButton3))
-                                .addGap(178, 178, 178)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRadioButton4)
-                                    .addComponent(jRadioButton2)))
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(9, 9, 9)
-                                        .addComponent(jLabel7))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(144, 144, 144)
-                                        .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(202, 202, 202)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel6)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel9)
-                                        .addGap(37, 37, 37)
-                                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(108, 108, 108)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jRadioButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jRadioButton6))))
-                                .addGap(227, 227, 227)
-                                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(97, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(date1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(date2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(86, 86, 86))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(jLabel1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(jLabel2)
-                        .addGap(50, 50, 50))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2))
-                        .addGap(52, 52, 52)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton3)
-                            .addComponent(jRadioButton4))
-                        .addGap(18, 18, 18)))
-                .addComponent(jLabel7)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(date2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(71, 71, 71)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(date1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addComponent(jRadioButton6))
-                .addGap(18, 18, 18)
-                .addComponent(jRadioButton7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(test))
-                .addContainerGap())
-        );
+        ulabel.setText("ID :");
+        ulabel.setEnabled(false);
+        getContentPane().add(ulabel);
+        ulabel.setBounds(59, 76, 18, 16);
+
+        ufield.setEnabled(false);
+        getContentPane().add(ufield);
+        ufield.setBounds(122, 70, 139, 28);
+
+        plabel.setText("Password :");
+        plabel.setEnabled(false);
+        getContentPane().add(plabel);
+        plabel.setBounds(350, 76, 62, 16);
+
+        pfield.setEnabled(false);
+        getContentPane().add(pfield);
+        pfield.setBounds(430, 70, 137, 28);
+
+        jComboBox4e.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jComboBox4e.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paris", "Italy", "Heleopolis", "Dortmund", "Ghana", "India" }));
+        getContentPane().add(jComboBox4e);
+        jComboBox4e.setBounds(441, 331, 153, 27);
+
+        jComboBox3e.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jComboBox3e.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cairo", "Alexandria", "Giza" }));
+        jComboBox3e.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox3eActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox3e);
+        jComboBox3e.setBounds(156, 331, 153, 28);
+
+        jLabel11.setText("jLabel11");
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(6, 0, 48, 16);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
-x++;
+        x++;
+        internal = 1;
+        String[] Internal = new String[] {"Cairo", "Alexandria", "Aswan"};
+        JComboBox<String> Internals = new JComboBox<String>(Internal);
+        jComboBox3.setVisible(true);
+        jComboBox4.setVisible(true);
+        jComboBox3e.setVisible(false);
+        jComboBox4e.setVisible(false);
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
-x++;
+        x++;
     }//GEN-LAST:event_jComboBox3ActionPerformed
 
     private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
-x++;
+        x++;
     }//GEN-LAST:event_jComboBox5ActionPerformed
 
     private void jRadioButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton7ActionPerformed
-x++;
-if(x>=6){
-    jButton1.setEnabled(true);
-}
-        
+        x++;
+        if (x >= 6) {
+            jButton1.setEnabled(true);
+        }
+        oneway=0;
     }//GEN-LAST:event_jRadioButton7ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         
-        ReserveChairWindow reservech  = new ReserveChairWindow();
-       reservech.setVisible(true);
-               this.setVisible(false);
-x=0;
-       
+        ReserveChairWindow reservech = new ReserveChairWindow();
+        reservech.setVisible(true);
+        this.setVisible(false);
+        x = 0;
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton6ActionPerformed
-      x++;
-      if(x==6){
-    jButton1.setEnabled(true);
-}
-        
+        x++;
+        if (x == 6) {
+            jButton1.setEnabled(true);
+        }
+        oneway=1;
     }//GEN-LAST:event_jRadioButton6ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         x++;
+        ufield.setEnabled(true);
+        ulabel.setEnabled(true);
+        pfield.setEnabled(true);
+        plabel.setEnabled(true);
+        vip = 1;
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-x++;
+        x++;
+        ufield.setEnabled(false);
+        ulabel.setEnabled(false);
+        pfield.setEnabled(false);
+        plabel.setEnabled(false);
+        vip = 0;
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
@@ -331,6 +334,21 @@ x++;    }//GEN-LAST:event_jComboBox4ActionPerformed
 //String date = date1.getText();
 
     }//GEN-LAST:event_testActionPerformed
+
+    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+        internal = 0;
+        jComboBox3e.setLocation(jComboBox3.getLocation());
+        jComboBox4e.setLocation(jComboBox4.getLocation());
+        jComboBox3.setVisible(false);
+        jComboBox4.setVisible(false);
+        jComboBox3e.setVisible(true);
+        jComboBox4e.setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton4ActionPerformed
+
+    private void jComboBox3eActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3eActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox3eActionPerformed
     
     /**
      * @param args the command line arguments
@@ -375,9 +393,12 @@ x++;    }//GEN-LAST:event_jComboBox4ActionPerformed
     private com.toedter.calendar.JDateChooser date2;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox3e;
     private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JComboBox<String> jComboBox4e;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -392,6 +413,10 @@ x++;    }//GEN-LAST:event_jComboBox4ActionPerformed
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JRadioButton jRadioButton7;
+    private javax.swing.JPasswordField pfield;
+    private javax.swing.JLabel plabel;
     private javax.swing.JButton test;
+    private javax.swing.JTextField ufield;
+    private javax.swing.JLabel ulabel;
     // End of variables declaration//GEN-END:variables
 }
