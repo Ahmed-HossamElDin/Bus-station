@@ -1,3 +1,7 @@
+
+import java.awt.Toolkit;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -235,11 +239,21 @@ private void EnableNext()
 
     private void jBtnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnNextActionPerformed
            
+        if(x>5)
+        {
+            Toolkit.getDefaultToolkit().beep();
+            String warning = "Ticket number consists of 5 digits only.";
+            JOptionPane.showMessageDialog(null, warning);
+            jtxtDisplay.setText("");
+            x=0;
+        }
+        else
+        {
             TripDetails tripD = new TripDetails();
             tripD.setVisible(true);
             this.setVisible(false);
-
-x=0;
+            x=0;
+        }
     }//GEN-LAST:event_jBtnNextActionPerformed
 
     private void jtxtDisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtDisplayActionPerformed

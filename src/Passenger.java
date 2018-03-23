@@ -9,12 +9,19 @@
  * @author ahate
  */
 public class Passenger {
-
+    private String Name;
     private boolean VIP;
 
-    public Passenger(boolean VIP) {
-        this.VIP = VIP;
+    public Passenger() {
     }
     //public bookTrip()
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String Name) {
+        this.Name = Name;
+    }
 
 }

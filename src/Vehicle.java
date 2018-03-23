@@ -8,17 +8,45 @@
  *
  * @author ahate
  */
-public abstract class Vehicle {
+public class Vehicle {
 
-    private int number;
-    private int numberOfPassengers;
-    private int availableSeats;
-    private int bookedSeats;
+    private String number;
+    private String numberOfPassengers;
+    private String availableSeats;
 
-    public Vehicle(int number, int numberOfPassengers, int availableSeats, int bookedSeats) {
+    public Vehicle(String number, String numberOfPassengers, String availableSeats) {
         this.number = number;
         this.numberOfPassengers = numberOfPassengers;
         this.availableSeats = availableSeats;
-        this.bookedSeats = bookedSeats;
     }
+
+    Vehicle() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public String getNumberOfPassengers() {
+        return numberOfPassengers;
+    }
+
+    public void setNumberOfPassengers(String numberOfPassengers) {
+        this.numberOfPassengers = numberOfPassengers;
+    }
+
+    public String getAvailableSeats() {
+        return availableSeats;
+    }
+
+    public void setAvailableSeats(String availableSeats) {
+        this.availableSeats = availableSeats;
+    }
+
+
 }

@@ -8,7 +8,7 @@
  *
  * @author ahate
  */
-public class Ticket {
+public abstract class Ticket {
 
     private Double price;
     private boolean goOnly;
