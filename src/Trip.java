@@ -78,4 +78,10 @@ public class Trip {
         this.numberOfStops = numberOfStops;
     }
 
+        Double CalculatePrice() {
+        Double result, rateperkm;
+        rateperkm = 0.2;
+        result = Double.parseDouble(this.getDistance()) * rateperkm;
+        return result;
+    }
 }

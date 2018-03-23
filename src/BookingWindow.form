@@ -179,18 +179,10 @@
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="11">
+          <StringArray count="3">
             <StringItem index="0" value="Cairo"/>
             <StringItem index="1" value="Alexandria"/>
-            <StringItem index="2" value="Aswan"/>
-            <StringItem index="3" value="Luxor"/>
-            <StringItem index="4" value="Hurghada"/>
-            <StringItem index="5" value="Sharm El-Sheikh"/>
-            <StringItem index="6" value="6th of October"/>
-            <StringItem index="7" value="Assiut"/>
-            <StringItem index="8" value="Banha"/>
-            <StringItem index="9" value="Menofia"/>
-            <StringItem index="10" value="Giza"/>
+            <StringItem index="2" value="Giza"/>
           </StringArray>
         </Property>
       </Properties>
@@ -225,18 +217,10 @@
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="11">
+          <StringArray count="3">
             <StringItem index="0" value="Cairo"/>
             <StringItem index="1" value="Alexandria"/>
-            <StringItem index="2" value="Aswan"/>
-            <StringItem index="3" value="Luxor"/>
-            <StringItem index="4" value="Hurghada"/>
-            <StringItem index="5" value="Sharm El-Sheikh"/>
-            <StringItem index="6" value="6th of October"/>
-            <StringItem index="7" value="Assiut"/>
-            <StringItem index="8" value="Banha"/>
-            <StringItem index="9" value="Menofia"/>
-            <StringItem index="10" value="Giza"/>
+            <StringItem index="2" value="Giza"/>
           </StringArray>
         </Property>
       </Properties>
@@ -294,7 +278,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="311" y="201" width="-1" height="-1"/>
+          <AbsoluteConstraints x="260" y="200" width="50" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -441,13 +425,10 @@
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="6">
+          <StringArray count="3">
             <StringItem index="0" value="Paris"/>
-            <StringItem index="1" value="Italy"/>
-            <StringItem index="2" value="Heleopolis"/>
-            <StringItem index="3" value="Dortmund"/>
-            <StringItem index="4" value="Ghana"/>
-            <StringItem index="5" value="India"/>
+            <StringItem index="1" value="Moscow"/>
+            <StringItem index="2" value="Italy"/>
           </StringArray>
         </Property>
       </Properties>
@@ -486,9 +467,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel11">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel11"/>
-      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="6" y="0" width="-1" height="-1"/>

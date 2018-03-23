@@ -134,4 +134,22 @@ public abstract class Tools {
             list.add(a);
         }
     }
+    	public static double GetDistance(City from,City to) {
+		double theta = from.getLogitude() - to.getLogitude();
+		double dist = Math.sin(degtorad(from.getLatitude())) * Math.sin(degtorad(to.getLatitude())) + Math.cos(degtorad(from.getLatitude())) * Math.cos(degtorad(to.getLatitude())) * Math.cos(degtorad(theta));
+		dist = Math.acos(dist);
+		dist = radtodeg(dist);
+		dist = dist * 60 * 1.1515;
+		return (dist);
+        }
+
+
+	public static double degtorad(double deg) {
+		return (deg * Math.PI / 180.0);
+	}
+
+
+	public static double radtodeg(double rad) {
+		return (rad * 180 / Math.PI);
+	}
 }

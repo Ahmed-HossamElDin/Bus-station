@@ -1,18 +1,33 @@
 
 import javax.swing.ComboBoxModel;
 import javax.swing.JComboBox;
-
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.random;
 
 public class BookingWindow extends javax.swing.JFrame {
 
     int x = 0; //flag to enable next button
     int internal = 0; //internal flag
     int vip = 0;  //vip flag
-    int oneway=0; //onewayflag
+    int oneway = 0; //onewayflag
+    City Alexandria = new City(31.2001, 29.9187); //Cities coordinates to calculate distance
+    City Cairo = new City(30.0444, 31.2357);
+    City Giza = new City(30.0131, 31.2089);
+    City Paris = new City(48.8566, 2.3522);
+    City Moscow = new City(55.7558, 37.6173);
+    City Barcelona = new City(41.3851, 2.1734);
+
     public BookingWindow() {
         initComponents();
         jComboBox3e.setVisible(false);
         jComboBox4e.setVisible(false);
+        for (int i = 0; i < 3; i++) {
+            if (jComboBox3.getSelectedIndex() == i) {
+                jComboBox4.remove(i);
+
+            }
+        }
 
     }
 
@@ -131,7 +146,7 @@ public class BookingWindow extends javax.swing.JFrame {
         jLabel5.setBounds(59, 378, 41, 17);
 
         jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cairo", "Alexandria", "Aswan", "Luxor", "Hurghada", "Sharm El-Sheikh", "6th of October", "Assiut", "Banha", "Menofia", "Giza" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cairo", "Alexandria", "Giza" }));
         jComboBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox3ActionPerformed(evt);
@@ -146,7 +161,7 @@ public class BookingWindow extends javax.swing.JFrame {
         jLabel6.setBounds(381, 378, 25, 17);
 
         jComboBox4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cairo", "Alexandria", "Aswan", "Luxor", "Hurghada", "Sharm El-Sheikh", "6th of October", "Assiut", "Banha", "Menofia", "Giza" }));
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cairo", "Alexandria", "Giza" }));
         jComboBox4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox4ActionPerformed(evt);
@@ -170,7 +185,7 @@ public class BookingWindow extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jComboBox5);
-        jComboBox5.setBounds(311, 201, 38, 27);
+        jComboBox5.setBounds(260, 200, 50, 27);
 
         buttonGroup3.add(jRadioButton6);
         jRadioButton6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -242,7 +257,7 @@ public class BookingWindow extends javax.swing.JFrame {
         pfield.setBounds(430, 70, 137, 28);
 
         jComboBox4e.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox4e.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paris", "Italy", "Heleopolis", "Dortmund", "Ghana", "India" }));
+        jComboBox4e.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paris", "Moscow", "Italy" }));
         getContentPane().add(jComboBox4e);
         jComboBox4e.setBounds(441, 331, 153, 27);
 
@@ -255,19 +270,17 @@ public class BookingWindow extends javax.swing.JFrame {
         });
         getContentPane().add(jComboBox3e);
         jComboBox3e.setBounds(156, 331, 153, 28);
-
-        jLabel11.setText("jLabel11");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(6, 0, 48, 16);
+        jLabel11.setBounds(6, 0, 0, 0);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
+
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
         x++;
         internal = 1;
-        String[] Internal = new String[] {"Cairo", "Alexandria", "Aswan"};
+        String[] Internal = new String[]{"Cairo", "Alexandria", "Aswan"};
         JComboBox<String> Internals = new JComboBox<String>(Internal);
         jComboBox3.setVisible(true);
         jComboBox4.setVisible(true);
@@ -288,16 +301,97 @@ public class BookingWindow extends javax.swing.JFrame {
         if (x >= 6) {
             jButton1.setEnabled(true);
         }
-        oneway=0;
+        oneway = 0;
     }//GEN-LAST:event_jRadioButton7ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       if(internal==1)
+       {
+        Trip trip = new ExternalTrip();
+        Double distance = null;
+        String from = jComboBox3.getSelectedItem().toString();
+        String to = jComboBox4.getSelectedItem().toString();
+        trip.setFrom(from);
+        trip.setTo(to);
+        switch (from) {
+            case "Cairo": {
+                switch (to) {
+                    case "Alexandria":
+                        distance = Tools.GetDistance(Cairo, Alexandria);
+                    case "Giza":
+                        distance = Tools.GetDistance(Cairo, Giza);
+                }
+            }
+            case "Alexandria": {
+                switch (to) {
+                    case "Cairo":
+                        distance = Tools.GetDistance(Cairo, Alexandria);
+                    case "Giza":
+                        distance = Tools.GetDistance(Alexandria, Giza);
 
-        
+                }
+            }
+            case "Giza": {
+                switch (to) {
+                    case "Cairo":
+                        distance = Tools.GetDistance(Cairo, Giza);
+                    case "Alexandria":
+                        distance = Tools.GetDistance(Alexandria, Giza);
+                }
+            }
+        }
+        trip.setDistance(distance.toString());
+        Double price = trip.CalculatePrice();
+        trip.setNumberOfStops(jComboBox5.getSelectedItem().toString());
         ReserveChairWindow reservech = new ReserveChairWindow();
         reservech.setVisible(true);
         this.setVisible(false);
         x = 0;
+       }
+       else
+       {
+        Trip trip = new Trip();
+        Double distance = null;
+        String from = jComboBox3.getSelectedItem().toString();
+        String to = jComboBox4.getSelectedItem().toString();
+        trip.setFrom(from);
+        trip.setTo(to);
+        switch (from) {
+            case "Cairo": {
+                switch (to) {
+                    case "Alexandria":
+                        distance = Tools.GetDistance(Cairo, Alexandria);
+                    case "Giza":
+                        distance = Tools.GetDistance(Cairo, Giza);
+                }
+            }
+            case "Alexandria": {
+                switch (to) {
+                    case "Cairo":
+                        distance = Tools.GetDistance(Cairo, Alexandria);
+                    case "Giza":
+                        distance = Tools.GetDistance(Alexandria, Giza);
+
+                }
+            }
+            case "Giza": {
+                switch (to) {
+                    case "Cairo":
+                        distance = Tools.GetDistance(Cairo, Giza);
+                    case "Alexandria":
+                        distance = Tools.GetDistance(Alexandria, Giza);
+                }
+            }
+        }
+        trip.setDistance(distance.toString());
+        Double price = trip.CalculatePrice();
+        trip.setNumberOfStops(jComboBox5.getSelectedItem().toString());
+        ReserveChairWindow reservech = new ReserveChairWindow();
+        reservech.setVisible(true);
+        this.setVisible(false);
+        x = 0;
+       }
+
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -306,7 +400,7 @@ public class BookingWindow extends javax.swing.JFrame {
         if (x == 6) {
             jButton1.setEnabled(true);
         }
-        oneway=1;
+        oneway = 1;
     }//GEN-LAST:event_jRadioButton6ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
@@ -331,7 +425,7 @@ public class BookingWindow extends javax.swing.JFrame {
 x++;    }//GEN-LAST:event_jComboBox4ActionPerformed
 
     private void testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testActionPerformed
-//String date = date1.getText();
+        date2.getDate();//String date = date1.getText();
 
     }//GEN-LAST:event_testActionPerformed
 
@@ -349,7 +443,7 @@ x++;    }//GEN-LAST:event_jComboBox4ActionPerformed
     private void jComboBox3eActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3eActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox3eActionPerformed
-    
+
     /**
      * @param args the command line arguments
      */
