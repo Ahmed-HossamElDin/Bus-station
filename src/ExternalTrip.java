@@ -11,11 +11,13 @@
 public class ExternalTrip extends Trip {
 
     @Override
-    Double CalculatePrice() {
+    public String CalculatePrice() {
         Double result, rateperkm;
-        rateperkm = 0.05;
-        result = Double.parseDouble(this.getDistance()) * rateperkm;
-        return result;
+        rateperkm = 0.8;
+        result = (Double.parseDouble(this.getDistance()) * rateperkm);
+        Math.floor(result);
+        String finalresult = result.toString();
+        return finalresult;
     }
 
 }

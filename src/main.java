@@ -25,11 +25,15 @@ public class main {
      * @param args the command line arguments
      * @throws java.io.IOException
      */
-    public static void main(String[] args) throws IOException 
+   /*--------- public static void main(String[] args) throws IOException 
     {
      List<Driver> Drivers = new ArrayList<>();
      Tools.GetDrivers(Drivers);
     System.out.println(Drivers.get(0).getName());
     }
+-----------*/
+ Trip trip = new Trip("to", "from", "typeOfVehicle", "price", "100", "numberOfStops", "DateOfDeparture", "DateOfArrival");
+ trip.SetDistance(100);
+ 
 
 }

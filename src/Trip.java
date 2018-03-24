@@ -96,14 +96,16 @@ public class Trip {
 
 
 
-    Trip() {
+    public Trip() {
     }
 
-        Double CalculatePrice() {
+        public String CalculatePrice() {
         Double result, rateperkm;
-        rateperkm = 0.2;
-        result = Double.parseDouble(this.getDistance()) * rateperkm;
-        return result;
+        rateperkm = 1.0;
+        result = (Double.parseDouble(this.getDistance()) * rateperkm);
+        Math.floor(result);
+        String finalresult = result.toString();
+        return finalresult;
     }
         
 }

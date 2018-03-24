@@ -115,7 +115,8 @@ public abstract class Tools {
 		dist = Math.acos(dist);
 		dist = radtodeg(dist);
 		dist = dist * 60 * 1.1515;
-		return (dist);
+                int distance = (int) dist;
+		return (distance);
         }
 
 
