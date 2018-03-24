@@ -32,8 +32,6 @@ public class main {
     System.out.println(Drivers.get(0).getName());
     }
 -----------*/
- Trip trip = new Trip("to", "from", "typeOfVehicle", "price", "100", "numberOfStops", "DateOfDeparture", "DateOfArrival");
- trip.SetDistance(100);
  
 
 }
