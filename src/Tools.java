@@ -44,22 +44,6 @@ public abstract class Tools {
         return lineNumber;
     }
 
-    public static void Trial(List<Driver> list) throws FileNotFoundException, IOException {
-        File file = new File("Drivers.txt");
-        Scanner in = new Scanner(file);
-        String str;
-
-        while (in.hasNext()) {
-            str = in.nextLine();
-            String[] parts =str.split(",");
-            Driver a =new Driver();
-            a.setName(parts[0]);
-            a.setID(parts[1]);
-            a.setSalary(parts[2]);
-            list.add(a);
-        }
-    }
-
     public static void GetDrivers(List<Driver> list) throws FileNotFoundException, IOException {
         File file = new File("Drivers.txt");
         Scanner in = new Scanner(file);
@@ -76,6 +60,8 @@ public abstract class Tools {
         }
     }
 
+
+
     public static void GetVehicles(List<Vehicle> list) throws FileNotFoundException, IOException {
         File file = new File("Vehicles.txt");
         Scanner in = new Scanner(file);
@@ -91,19 +77,6 @@ public abstract class Tools {
         }
     }
 
-    public static void GetEmployees(List<Employee> list) throws FileNotFoundException, IOException {
-        File file = new File("Employees.txt");
-        Scanner in = new Scanner(file);
-        String str;
-        while (in.hasNext()) {
-            str = in.nextLine();
-            String[] parts =str.split(",");
-            Employee a = new Employee();
-            a.setName(parts[0]);
-            a.setSalary(parts[1]);
-            list.add(a);
-        }
-    }
 
     public static void GetVip(List<Passenger> list) throws FileNotFoundException, IOException {
         File file = new File("Vip.txt");
@@ -112,8 +85,10 @@ public abstract class Tools {
         while (in.hasNext()) {
             str = in.nextLine();
             String[] parts =str.split(",");
-            Passenger a = new Vip();
-            a.setName(parts[0]);
+            VipPassenger a = new VipPassenger();
+            a.setSeat(parts[0]);
+            a.setID(parts[1]);
+            a.setPassword(parts[2]);
             list.add(a);
         }
     }

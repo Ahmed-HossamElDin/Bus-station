@@ -8,20 +8,55 @@
  *
  * @author ahate
  */
-public abstract class Ticket {
+public class Ticket {
 
     private Double price;
-    private boolean goOnly;
-    private Double timeOfDeparture;
-    private Double timeOfArrival;
-    private int ticketNumber;
+    private String timeOfDeparture;
+    private String timeOfArrival;
+    private String ticketNumber;
 
-    public Ticket(Double price, boolean goOnly, Double timeOfDeparture, Double timeOfArrival, int ticketNumber) {
+    public Ticket(Double price, String timeOfDeparture, String timeOfArrival, String ticketNumber) {
         this.price = price;
-        this.goOnly = goOnly;
         this.timeOfDeparture = timeOfDeparture;
         this.timeOfArrival = timeOfArrival;
         this.ticketNumber = ticketNumber; //lol
         //lol
     }
+
+    Ticket() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public String getTimeOfDeparture() {
+        return timeOfDeparture;
+    }
+
+    public void setTimeOfDeparture(String timeOfDeparture) {
+        this.timeOfDeparture = timeOfDeparture;
+    }
+
+    public String getTimeOfArrival() {
+        return timeOfArrival;
+    }
+
+    public void setTimeOfArrival(String timeOfArrival) {
+        this.timeOfArrival = timeOfArrival;
+    }
+
+    public String getTicketNumber() {
+        return ticketNumber;
+    }
+
+    public void setTicketNumber(String ticketNumber) {
+        this.ticketNumber = ticketNumber;
+    }
+    
 }

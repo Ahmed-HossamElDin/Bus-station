@@ -36,10 +36,5 @@ public class City {
     public void setLogitude(double logitude) {
         this.logitude = logitude;
     }
-    City Alexandria = new City(31.2001,29.9187);
-    City Cairo = new City(30.0444,31.2357);
-    City Giza = new City(30.0131,31.2089);
-    City Paris = new City(48.8566,2.3522);
-    City Moscow = new City (55.7558,37.6173);
-    City Barcelona = new City (41.3851,2.1734);
+ 
 }

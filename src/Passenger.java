@@ -9,19 +9,24 @@
  * @author ahate
  */
 public class Passenger {
-    private String Name;
-    private boolean VIP;
-
+    private String Seat;
     public Passenger() {
     }
     //public bookTrip()
 
-    public String getName() {
-        return Name;
+    public String getSeat() {
+        return Seat;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
+    public void setSeat(String Seat) {
+        this.Seat = Seat;
     }
 
+    public Passenger(String Seat) {
+        this.Seat = Seat;
+    }
+ public void BookTrip(Object Ticket)
+ {
+     //int total = 
+ }
 }

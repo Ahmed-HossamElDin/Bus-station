@@ -28,7 +28,7 @@ public class main {
     public static void main(String[] args) throws IOException 
     {
      List<Driver> Drivers = new ArrayList<>();
-     Tools.Trial(Drivers);
+     Tools.GetDrivers(Drivers);
     System.out.println(Drivers.get(0).getName());
     }
 
