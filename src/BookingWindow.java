@@ -431,7 +431,7 @@ public class BookingWindow extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(text4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(24, 24, 24)
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addComponent(jLabel3))
@@ -478,7 +478,7 @@ public class BookingWindow extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addComponent(test)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -668,9 +668,9 @@ chair.setVisible(true);
             String s = ((JTextField)date1.getDateEditor().getUiComponent()).getText();
 if (s.equals("")) {
     JOptionPane.showMessageDialog(null, "Please Enter Date of Departure", "Warning!", JOptionPane.ERROR_MESSAGE);
-
 return;
 }
+
  
 String s1 = ((JTextField)date2.getDateEditor().getUiComponent()).getText();
 if (s.equals("")) {
