@@ -249,7 +249,7 @@ private void EnableNext()
         }
         else
         {
-            TripDetails tripD = new TripDetails();
+            BookDetails tripD = new BookDetails();
             tripD.setVisible(true);
             this.setVisible(false);
             x=0;

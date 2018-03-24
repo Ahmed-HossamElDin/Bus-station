@@ -444,7 +444,7 @@ public class ReserveChairWindow extends javax.swing.JFrame {
 
     private void jButton51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton51ActionPerformed
         this.setVisible(false);
-        TripDetails tripdet =new TripDetails();
+        BookDetails tripdet =new BookDetails();
         tripdet.setVisible(true);
 
     }//GEN-LAST:event_jButton51ActionPerformed
