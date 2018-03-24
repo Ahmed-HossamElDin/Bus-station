@@ -16,18 +16,18 @@ public class Trip {
     private String price;
     private String distance;
     private String numberOfStops;
+    private String DateOfDeparture;
+    private String DateOfArrival;
 
-    public Trip(String to, String from, String typeOfVehicle, String price, String distance, String numberOfStops) {
+    public Trip(String to, String from, String typeOfVehicle, String price, String distance, String numberOfStops, String DateOfDeparture, String DateOfArrival) {
         this.to = to;
         this.from = from;
         this.typeOfVehicle = typeOfVehicle;
         this.price = price;
         this.distance = distance;
         this.numberOfStops = numberOfStops;
-    }
-
-    Trip() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.DateOfDeparture = DateOfDeparture;
+        this.DateOfArrival = DateOfArrival;
     }
 
     public String getTo() {
@@ -78,10 +78,33 @@ public class Trip {
         this.numberOfStops = numberOfStops;
     }
 
+    public String getDateOfDeparture() {
+        return DateOfDeparture;
+    }
+
+    public void setDateOfDeparture(String DateOfDeparture) {
+        this.DateOfDeparture = DateOfDeparture;
+    }
+
+    public String getDateOfArrival() {
+        return DateOfArrival;
+    }
+
+    public void setDateOfArrival(String DateOfArrival) {
+        this.DateOfArrival = DateOfArrival;
+    }
+
+
+
+    Trip() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
         Double CalculatePrice() {
         Double result, rateperkm;
         rateperkm = 0.2;
         result = Double.parseDouble(this.getDistance()) * rateperkm;
         return result;
     }
+        
 }

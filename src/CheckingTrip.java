@@ -16,7 +16,7 @@ public class CheckingTrip extends javax.swing.JFrame {
 int x=0;
 private void EnableNext()
 {
-    x++;
+     
         if(x==5)jBtnNext.setEnabled(true);
 }
     /**
