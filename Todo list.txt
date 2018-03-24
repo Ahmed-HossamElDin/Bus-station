@@ -1,0 +1,6 @@
+1-Price calculation
+2-Vehicle selection (with photo)
+3-Seat selection (with variable names)
+4-GIF interface
+5-Get current date
+6-Writing in files
