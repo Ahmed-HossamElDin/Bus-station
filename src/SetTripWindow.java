@@ -15,7 +15,6 @@ import javax.swing.JComboBox;
  */
 public class SetTripWindow extends javax.swing.JFrame {
 int x;
-String [] vechile ={"bus","minibus","lemosine"};
     /**
      * Creates new form EditTripWindow
      */
@@ -115,7 +114,7 @@ String [] vechile ={"bus","minibus","lemosine"};
         jLabel5.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
         jLabel5.setText("Vehicle type");
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bus", "Mini-bus", "Limousine" }));
         jComboBox3.addContainerListener(new java.awt.event.ContainerAdapter() {
             public void componentAdded(java.awt.event.ContainerEvent evt) {
                 jComboBox3ComponentAdded(evt);
@@ -209,8 +208,6 @@ String [] vechile ={"bus","minibus","lemosine"};
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
 x++;
-        DefaultComboBoxModel dm= new DefaultComboBoxModel(vechile);
-jComboBox3.setModel(dm);
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

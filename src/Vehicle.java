@@ -13,15 +13,17 @@ public class Vehicle {
     private String number;
     private String numberOfPassengers;
     private String availableSeats;
-
-    public Vehicle(String number, String numberOfPassengers, String availableSeats) {
-        this.number = number;
-        this.numberOfPassengers = numberOfPassengers;
-        this.availableSeats = availableSeats;
-    }
+    private Boolean availabe;
 
     Vehicle() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Vehicle(String number, String numberOfPassengers, String availableSeats, Boolean availabe) {
+        this.number = number;
+        this.numberOfPassengers = numberOfPassengers;
+        this.availableSeats = availableSeats;
+        this.availabe = availabe;
     }
 
     public String getNumber() {
@@ -48,5 +50,12 @@ public class Vehicle {
         this.availableSeats = availableSeats;
     }
 
+    public Boolean getAvailabe() {
+        return availabe;
+    }
+
+    public void setAvailabe(Boolean availabe) {
+        this.availabe = availabe;
+    }
 
 }
