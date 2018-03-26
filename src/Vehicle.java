@@ -58,4 +58,11 @@ public class Vehicle {
         this.availabe = availabe;
     }
 
+    public Boolean IsFull() {
+        if (Double.parseDouble(this.availableSeats) < Double.parseDouble(this.numberOfPassengers)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }
