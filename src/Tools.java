@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -51,8 +52,8 @@ public abstract class Tools {
 
         while (in.hasNext()) {
             str = in.nextLine();
-            String[] parts =str.split(",");
-            Driver a =new Driver();
+            String[] parts = str.split("/");
+            Driver a = new Driver();
             a.setName(parts[0]);
             a.setID(parts[1]);
             a.setSalary(parts[2]);
@@ -60,16 +61,14 @@ public abstract class Tools {
         }
     }
 
-
-
     public static void GetVehicles(List<Vehicle> list) throws FileNotFoundException, IOException {
         File file = new File("Vehicles.txt");
         Scanner in = new Scanner(file);
         String str;
         while (in.hasNext()) {
             str = in.nextLine();
-            String[] parts =str.split(",");
-            Vehicle a =new Vehicle();
+            String[] parts = str.split("/");
+            Vehicle a = new Vehicle();
             a.setNumber(parts[0]);
             a.setNumberOfPassengers(parts[1]);
             a.setAvailableSeats(parts[2]);
@@ -77,14 +76,13 @@ public abstract class Tools {
         }
     }
 
-
-    public static void GetVip(List<Passenger> list) throws FileNotFoundException, IOException {
+    public static void GetVip(List<VipPassenger> list) throws FileNotFoundException, IOException {
         File file = new File("Vip.txt");
         Scanner in = new Scanner(file);
         String str;
         while (in.hasNext()) {
             str = in.nextLine();
-            String[] parts =str.split(",");
+            String[] parts = str.split("/");
             VipPassenger a = new VipPassenger();
             a.setSeat(parts[0]);
             a.setID(parts[1]);
@@ -99,33 +97,207 @@ public abstract class Tools {
         String str;
         while (in.hasNext()) {
             str = in.nextLine();
-            String[] parts =str.split(",");
+            String[] parts = str.split("/");
             Trip a = new Trip();
             a.setTo(parts[0]);
             a.setFrom(parts[1]);
             a.setPrice(parts[2]);
             a.setDistance(parts[3]);
             a.setNumberOfStops(parts[4]);
+            a.setDateOfDeparture(parts[5]);
+            a.setType(parts[6]);
             list.add(a);
         }
     }
-    	public static double GetDistance(City from,City to) {
-		double theta = from.getLogitude() - to.getLogitude();
-		double dist = Math.sin(degtorad(from.getLatitude())) * Math.sin(degtorad(to.getLatitude())) + Math.cos(degtorad(from.getLatitude())) * Math.cos(degtorad(to.getLatitude())) * Math.cos(degtorad(theta));
-		dist = Math.acos(dist);
-		dist = radtodeg(dist);
-		dist = dist * 60 * 1.1515;
-                int distance = (int) dist;
-		return (distance);
+    public static void GetTicket(List<Ticket> list) throws FileNotFoundException, IOException {
+        File file = new File("Tickets.txt");
+        Scanner in = new Scanner(file);
+        String str;
+        while (in.hasNext()) {
+            str = in.nextLine();
+            String[] parts = str.split("/");
+            Ticket a = new Ticket();
+            a.setTicketNumber(parts[0]);
+            a.setPrice(Double.parseDouble(parts[1]));
+            a.setTimeOfDeparture(parts[2]);
+            a.setDateOfReturn(parts[3]);
+            list.add(a);
+        }
+    }
+
+    public static double GetDistance(City from, City to) {
+        double theta = from.getLogitude() - to.getLogitude();
+        double dist = Math.sin(degtorad(from.getLatitude())) * Math.sin(degtorad(to.getLatitude())) + Math.cos(degtorad(from.getLatitude())) * Math.cos(degtorad(to.getLatitude())) * Math.cos(degtorad(theta));
+        dist = Math.acos(dist);
+        dist = radtodeg(dist);
+        dist = dist * 60 * 1.1515;
+        int distance = (int) dist;
+        return (distance);
+    }
+
+    public static double degtorad(double deg) {
+        return (deg * Math.PI / 180.0);
+    }
+
+    public static double radtodeg(double rad) {
+        return (rad * 180 / Math.PI);
+    }
+
+    public static void WriteDrivers(List<Driver> list) {
+        try {
+            boolean append = false;
+            boolean autoFlush = true;
+            String charset = "UTF-8";
+            String filePath = "Drivers.txt";
+
+            File file = new File(filePath);
+
+            FileOutputStream fos = new FileOutputStream(file, append);
+            OutputStreamWriter osw = new OutputStreamWriter(fos, charset);
+            BufferedWriter bw = new BufferedWriter(osw);
+            PrintWriter pw = new PrintWriter(bw, autoFlush);
+            for (int i = 0; i < list.size(); i++) {
+                Driver d = list.get(i);
+                String data = d.getID() + '/' + d.getName() + '/' + d.getSalary();
+                // System.out.println(data);
+                pw.printf(data);
+                if (i < list.size() - 1) {
+                    bw.newLine();
+                }
+            }
+
+            pw.close();
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, "File not found!", "Warning!", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+    }
+
+    public static void WriteVehicles(List<Vehicle> list) {
+        try {
+            boolean append = false;
+            boolean autoFlush = true;
+            String charset = "UTF-8";
+            String filePath = "Vehicles.txt";
+
+            File file = new File(filePath);
+
+            FileOutputStream fos = new FileOutputStream(file, append);
+            OutputStreamWriter osw = new OutputStreamWriter(fos, charset);
+            BufferedWriter bw = new BufferedWriter(osw);
+            PrintWriter pw = new PrintWriter(bw, autoFlush);
+            for (int i = 0; i < list.size(); i++) {
+                Vehicle d = list.get(i);
+                String data = String.valueOf(d.getNumber()) + '/' + d.getNumberOfPassengers() + '/' + d.getAvailableSeats();
+                // System.out.println(data);
+                pw.printf(data);
+                if (i < list.size() - 1) {
+                    bw.newLine();
+                }
+            }
+
+            pw.close();
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, "File not found!", "Warning!", JOptionPane.ERROR_MESSAGE);
+            return;
         }
 
+    }
 
-	public static double degtorad(double deg) {
-		return (deg * Math.PI / 180.0);
-	}
+    public static void WriteVip(List<VipPassenger> list) {
+        try {
+            boolean append = false;
+            boolean autoFlush = true;
+            String charset = "UTF-8";
+            String filePath = "Vip.txt";
 
+            File file = new File(filePath);
 
-	public static double radtodeg(double rad) {
-		return (rad * 180 / Math.PI);
-	}
+            FileOutputStream fos = new FileOutputStream(file, append);
+            OutputStreamWriter osw = new OutputStreamWriter(fos, charset);
+            BufferedWriter bw = new BufferedWriter(osw);
+            PrintWriter pw = new PrintWriter(bw, autoFlush);
+            for (int i = 0; i < list.size(); i++) {
+                VipPassenger d = list.get(i);
+                String data = String.valueOf(d.getSeat()) + '/' + d.getID() + '/' + d.getPassword();
+                // System.out.println(data);
+                pw.printf(data);
+                if (i < list.size() - 1) {
+                    bw.newLine();
+                }
+            }
+
+            pw.close();
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, "File not found!", "Warning!", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+    }
+
+    public static void WriteTrip(List<Trip> list) {
+        try {
+            boolean append = false;
+            boolean autoFlush = true;
+            String charset = "UTF-8";
+            String filePath = "Trips.txt";
+
+            File file = new File(filePath);
+
+            FileOutputStream fos = new FileOutputStream(file, append);
+            OutputStreamWriter osw = new OutputStreamWriter(fos, charset);
+            BufferedWriter bw = new BufferedWriter(osw);
+            PrintWriter pw = new PrintWriter(bw, autoFlush);
+            for (int i = 0; i < list.size(); i++) {
+                Trip d = list.get(i);
+                String data = String.valueOf(d.getTo()) + '/' + d.getFrom() + '/' + d.getPrice() + '/' + d.getDistance() + '/' + d.getNumberOfStops() + '/' + d.getDateOfDeparture()+ '/' +d.getType();
+                // System.out.println(data);
+                pw.printf(data);
+                if (i < list.size() - 1) {
+                    bw.newLine();
+            }
+                }
+
+            pw.close();
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, "File not found!", "Warning!", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+    }
+    public static void WriteTicket(List<Ticket> list) {
+        try {
+            boolean append = false;
+            boolean autoFlush = true;
+            String charset = "UTF-8";
+            String filePath = "Tickets.txt";
+
+            File file = new File(filePath);
+
+            FileOutputStream fos = new FileOutputStream(file, append);
+            OutputStreamWriter osw = new OutputStreamWriter(fos, charset);
+            BufferedWriter bw = new BufferedWriter(osw);
+            PrintWriter pw = new PrintWriter(bw, autoFlush);
+            for (int i = 0; i < list.size(); i++) {
+                Ticket d = list.get(i);
+                String data = String.valueOf(d.getTicketNumber()) + '/' + d.getPrice()+ '/' + d.getTimeOfDeparture()+ '/' +d.getDateOfReturn();
+                // System.out.println(data);
+                pw.printf(data);
+                if (i < list.size() - 1) {
+                    bw.newLine();
+                }
+            }
+
+            pw.close();
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, "File not found!", "Warning!", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+    }
 }

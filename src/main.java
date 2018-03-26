@@ -21,17 +21,27 @@ import java.util.ArrayList;
  * @author ahate
  */
 public class main {
+         static List<Driver> Drivers = new ArrayList<>();
+         static List<Trip> Trips = new ArrayList<>();
+         static List<Ticket> Tickets = new ArrayList<>();
+         static List<Vehicle> Vehicles = new ArrayList<>();
+         static List<Vip> Vips = new ArrayList<>();
+         public static Double Rate = 1.0;
+         public static Double VipRate = 1.0;
     /**
      * @param args the command line arguments
-     * @throws java.io.IOException
      */
-   /*--------- public static void main(String[] args) throws IOException 
+public static void main(String[] args) throws IOException 
     {
-     List<Driver> Drivers = new ArrayList<>();
+
      Tools.GetDrivers(Drivers);
-    System.out.println(Drivers.get(0).getName());
+     Driver d = new Driver("800","oma7","1");
+     Drivers.add(d);
+     Tools.WriteDrivers(Drivers);
+     
+     
     }
------------*/
+
  
 
 }

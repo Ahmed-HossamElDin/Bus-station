@@ -11,20 +11,28 @@
 public class Ticket {
 
     private Double price;
-    private String timeOfDeparture;
-    private String timeOfArrival;
+    private String DateOfReturn;
+    private String TimeOfDeparture;
     private String ticketNumber;
+    private String Seat;
+    private String type;
+    private String way;
 
-    public Ticket(Double price, String timeOfDeparture, String timeOfArrival, String ticketNumber) {
+    public Ticket(Double price, String DateOfReturn, String TimeOfDeparture, String ticketNumber, String Seat, String type, String way) {
         this.price = price;
-        this.timeOfDeparture = timeOfDeparture;
-        this.timeOfArrival = timeOfArrival;
-        this.ticketNumber = ticketNumber; //lol
-        //lol
+        this.DateOfReturn = DateOfReturn;
+        this.TimeOfDeparture = TimeOfDeparture;
+        this.ticketNumber = ticketNumber;
+        this.Seat = Seat;
+        this.type = type;
+        this.way = way;
     }
 
+
+
+ 
     Ticket() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   
     }
 
     public Double getPrice() {
@@ -35,20 +43,20 @@ public class Ticket {
         this.price = price;
     }
 
+    public String getDateOfReturn() {
+        return DateOfReturn;
+    }
+
+    public void setDateOfReturn(String DateOfReturn) {
+        this.DateOfReturn = DateOfReturn;
+    }
+
     public String getTimeOfDeparture() {
-        return timeOfDeparture;
+        return TimeOfDeparture;
     }
 
-    public void setTimeOfDeparture(String timeOfDeparture) {
-        this.timeOfDeparture = timeOfDeparture;
-    }
-
-    public String getTimeOfArrival() {
-        return timeOfArrival;
-    }
-
-    public void setTimeOfArrival(String timeOfArrival) {
-        this.timeOfArrival = timeOfArrival;
+    public void setTimeOfDeparture(String TimeOfDeparture) {
+        this.TimeOfDeparture = TimeOfDeparture;
     }
 
     public String getTicketNumber() {
@@ -57,6 +65,30 @@ public class Ticket {
 
     public void setTicketNumber(String ticketNumber) {
         this.ticketNumber = ticketNumber;
+    }
+
+    public String getSeat() {
+        return Seat;
+    }
+
+    public void setSeat(String Seat) {
+        this.Seat = Seat;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getWay() {
+        return way;
+    }
+
+    public void setWay(String way) {
+        this.way = way;
     }
     
 }

@@ -9,16 +9,30 @@
  * @author ahate
  */
 public class Driver extends Employee{
-   Class Vehicle;
    private String ID;
 
-    public String getID() {
-        return ID;
+    Driver() {
+      
     }
+
 
     public void setID(String ID) {
         this.ID = ID;
     }
+
+ 
+    public String getID() {
+        return ID;
+    }
+
+    public Driver(String ID,String name ,String salary) {
+        this.ID = ID;
+        this.name = name;
+        this.salary = salary;
+        
+    }
+
+  
 
     
 }

@@ -8,8 +8,8 @@
  * @author ahate
  */
 public abstract class Employee {
-    private String name;
-    private String salary;
+    String name;
+    String salary;
 
     public String getName() {
         return name;

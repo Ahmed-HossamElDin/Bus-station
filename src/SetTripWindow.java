@@ -1,24 +1,40 @@
 
 import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.String;
+import java.text.DateFormat;
+import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author hp_pc
  */
 public class SetTripWindow extends javax.swing.JFrame {
-int x;
+
+    int x;
+    Trip trip = new Trip();
+    String[] CairoSelectionCities = {"Alexandria", "Giza"};
+    String[] AlexandriaSelectionCities = {"Cairo", "Giza"};
+    String[] GizaSelectionCities = {"Cairo", "Alexandria"};
+    City Alexandria = new City(31.2001, 29.9187); //Cities coordinates to calculate distance
+    City Cairo = new City(30.0444, 31.2357);
+    City Giza = new City(30.0131, 31.2089);
+    City Paris = new City(48.8566, 2.3522);
+    City Moscow = new City(55.7558, 37.6173);
+    City Barcelona = new City(41.3851, 2.1734);
+
     /**
      * Creates new form EditTripWindow
      */
     public SetTripWindow() {
+
         initComponents();
     }
 
@@ -41,11 +57,11 @@ int x;
         buttonGroup8 = new javax.swing.ButtonGroup();
         buttonGroup9 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        date1 = new com.toedter.calendar.JDateChooser();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox3 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBox4 = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jComboBox5 = new javax.swing.JComboBox<>();
@@ -53,7 +69,10 @@ int x;
         jRadioButton4 = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        jComboBox6 = new javax.swing.JComboBox<>();
+        jButton2 = new javax.swing.JButton();
+        text1 = new javax.swing.JTextField();
+        jComboBox4e = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,12 +82,17 @@ int x;
         jLabel2.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
         jLabel2.setText("From:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cairo", "Alexandria", "Giza" }));
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox3ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
         jLabel3.setText("To:");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alexandria", "Giza", " " }));
 
         jLabel4.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
         jLabel4.setText("Trip type:");
@@ -77,7 +101,7 @@ int x;
         jLabel8.setText("Stops :");
 
         jComboBox5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4" }));
         jComboBox5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox5ActionPerformed(evt);
@@ -114,15 +138,36 @@ int x;
         jLabel5.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
         jLabel5.setText("Vehicle type");
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bus", "Mini-bus", "Limousine" }));
-        jComboBox3.addContainerListener(new java.awt.event.ContainerAdapter() {
+        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bus", "Mini-bus", "Limousine" }));
+        jComboBox6.addContainerListener(new java.awt.event.ContainerAdapter() {
             public void componentAdded(java.awt.event.ContainerEvent evt) {
-                jComboBox3ComponentAdded(evt);
+                jComboBox6ComponentAdded(evt);
             }
         });
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+        jComboBox6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
+                jComboBox6ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Test");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        text1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                text1ActionPerformed(evt);
+            }
+        });
+
+        jComboBox4e.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jComboBox4e.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paris", "Moscow", "Barcelona" }));
+        jComboBox4e.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox4eActionPerformed(evt);
             }
         });
 
@@ -132,6 +177,16 @@ int x;
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(179, 179, 179)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(date1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(text1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,23 +202,19 @@ int x;
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(60, 60, 60)
                                 .addComponent(jRadioButton4))
+                            .addComponent(jLabel5)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(39, 39, 39)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel5)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(179, 179, 179)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jComboBox4e, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(66, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(121, 121, 121)
-                .addComponent(jComboBox3, 0, 121, Short.MAX_VALUE)
+                .addComponent(jComboBox6, 0, 121, Short.MAX_VALUE)
                 .addGap(213, 213, 213))
         );
         layout.setVerticalGroup(
@@ -172,7 +223,9 @@ int x;
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(date1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(text1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -185,18 +238,22 @@ int x;
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox4e, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                    .addComponent(jButton2))
                 .addContainerGap())
         );
 
@@ -207,22 +264,108 @@ int x;
     }//GEN-LAST:event_jComboBox5ActionPerformed
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
- 
+
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
- 
+        if (jRadioButton3.isSelected()) {
+            trip.setType("internal");
+        } else {
+            trip.setType("External");
+        }
+        Double distance = null;
+        String from = jComboBox3.getSelectedItem().toString();
+        String to = jComboBox4.getSelectedItem().toString();
+        trip.setFrom(from);
+        trip.setTo(to);
+           switch (from) {
+                case "Cairo": {
+                    switch (to) {
+                        case "Alexandria":
+                            distance = Tools.GetDistance(Cairo, Alexandria);
+                        case "Giza":
+                            distance = Tools.GetDistance(Cairo, Giza);
+                    }
+                }
+                case "Alexandria": {
+                    switch (to) {
+                        case "Cairo":
+                            distance = Tools.GetDistance(Alexandria, Cairo);
+                        case "Giza":
+                            distance = Tools.GetDistance(Alexandria, Giza);
+
+                    }
+                }
+                case "Giza": {
+                    switch (to) {
+                        case "Cairo":
+                            distance = Tools.GetDistance(Giza, Cairo);
+                        case "Alexandria":
+                            distance = Tools.GetDistance(Giza, Alexandria);
+                    }
+                }
+            }
+        
+        trip.setDistance(Double.toString(distance));
+        Double price = (trip.CalculatePrice());
+        String p = Double.toString(price);
+        trip.setPrice(p);
+        trip.setNumberOfStops(jComboBox5.getSelectedItem().toString());
+        Date d1 = date1.getDate();
+        String strDate1 = DateFormat.getDateInstance().format(d1);
+        String DateOfD = strDate1 + "," + text1.getText();
+        trip.setDateOfDeparture(DateOfD);
+        trip.setTypeOfVehicle(jComboBox6.getSelectedItem().toString());
+        main.Trips.add(trip);
+        Tools.WriteTicket(main.Tickets);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton4ActionPerformed
 
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
-    }//GEN-LAST:event_jComboBox3ActionPerformed
+    private void jComboBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox6ActionPerformed
+    }//GEN-LAST:event_jComboBox6ActionPerformed
 
-    private void jComboBox3ComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jComboBox3ComponentAdded
-    }//GEN-LAST:event_jComboBox3ComponentAdded
+    private void jComboBox6ComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jComboBox6ComponentAdded
+    }//GEN-LAST:event_jComboBox6ComponentAdded
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        if (!jRadioButton3.isSelected() && !jRadioButton4.isSelected()) {
+            JOptionPane.showMessageDialog(null, "Please select Trip type!", "Warning!", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        String s = ((JTextField) date1.getDateEditor().getUiComponent()).getText();
+        if (s.equals("")) {
+            JOptionPane.showMessageDialog(null, "Please Enter Date of Departure", "Warning!", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        jButton1.setEnabled(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+        if (jComboBox3.getSelectedIndex() == 0) {
+            jComboBox4.removeAllItems();
+            DefaultComboBoxModel Cities = new DefaultComboBoxModel(CairoSelectionCities);
+            jComboBox4.setModel(Cities);
+        } else if (jComboBox3.getSelectedIndex() == 1) {
+            jComboBox4.removeAllItems();
+            DefaultComboBoxModel Cities = new DefaultComboBoxModel(AlexandriaSelectionCities);
+            jComboBox4.setModel(Cities);
+        } else if (jComboBox3.getSelectedIndex() == 2) {
+            jComboBox4.removeAllItems();
+            DefaultComboBoxModel Cities = new DefaultComboBoxModel(GizaSelectionCities);
+            jComboBox4.setModel(Cities);
+
+                }    }//GEN-LAST:event_jComboBox3ActionPerformed
+
+    private void text1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text1ActionPerformed
+
+    private void jComboBox4eActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4eActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox4eActionPerformed
 
     /**
      * @param args the command line arguments
@@ -270,12 +413,14 @@ int x;
     private javax.swing.ButtonGroup buttonGroup7;
     private javax.swing.ButtonGroup buttonGroup8;
     private javax.swing.ButtonGroup buttonGroup9;
+    private com.toedter.calendar.JDateChooser date1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JComboBox<String> jComboBox4e;
     private javax.swing.JComboBox<String> jComboBox5;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -284,5 +429,6 @@ int x;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JTextField text1;
     // End of variables declaration//GEN-END:variables
 }

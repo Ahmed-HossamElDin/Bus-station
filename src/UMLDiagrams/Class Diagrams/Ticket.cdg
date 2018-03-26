@@ -5,8 +5,8 @@
     <Class name="Ticket" package="" visibility="public" xPosition="196.0" yPosition="15.0">
       <Fields>
         <Field name="price" type="Double" visibility="private"/>
-        <Field name="TimeOfArrival" type="Object" visibility="private"/>
         <Field name="TimeOfDeparture" type="Object" visibility="private"/>
+        <Field name="DateOfReturn" type="Object" visibility="private"/>
         <Field name="Number" type="int" visibility="private"/>
         <Field name="goOnly" type="Boolean" visibility="private"/>
       </Fields>
