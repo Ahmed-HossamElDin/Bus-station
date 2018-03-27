@@ -148,8 +148,11 @@ public class SetSalaryWindow extends javax.swing.JFrame {
             {
                 for(int j=0 ;j<jTable1.getColumnCount();j++)//column
                 {
+                    if(j == jTable1.getColumnCount()-1)
+                        bw.write((String)jTable1.getValueAt(i, j).toString()+"\r\n");
+                    else
+                         bw.write((String)jTable1.getValueAt(i, j).toString()+"/");
                     
-                    bw.write((String)jTable1.getValueAt(i, j).toString()+"/");
                 }
             }
             bw.close();

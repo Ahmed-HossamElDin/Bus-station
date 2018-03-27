@@ -53,12 +53,11 @@ private void EnableNext()
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Enter ticket number :");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(6, 31, 217, 51);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 217, 51));
 
         jtxtDisplay.setEnabled(false);
         jtxtDisplay.addActionListener(new java.awt.event.ActionListener() {
@@ -66,8 +65,7 @@ private void EnableNext()
                 jtxtDisplayActionPerformed(evt);
             }
         });
-        getContentPane().add(jtxtDisplay);
-        jtxtDisplay.setBounds(80, 110, 270, 34);
+        getContentPane().add(jtxtDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 270, 34));
 
         jBtn7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtn7.setText("7");
@@ -76,8 +74,7 @@ private void EnableNext()
                 jBtn7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtn7);
-        jBtn7.setBounds(66, 171, 63, 40);
+        getContentPane().add(jBtn7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 63, 40));
 
         jBtn8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtn8.setText("8");
@@ -86,8 +83,7 @@ private void EnableNext()
                 jBtn8ActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtn8);
-        jBtn8.setBounds(172, 171, 63, 40);
+        getContentPane().add(jBtn8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 63, 40));
 
         jBtn9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtn9.setText("9");
@@ -96,8 +92,7 @@ private void EnableNext()
                 jBtn9ActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtn9);
-        jBtn9.setBounds(273, 171, 63, 40);
+        getContentPane().add(jBtn9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 63, 40));
 
         jBtn4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtn4.setText("4");
@@ -106,8 +101,7 @@ private void EnableNext()
                 jBtn4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtn4);
-        jBtn4.setBounds(66, 237, 63, 40);
+        getContentPane().add(jBtn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 63, 40));
 
         jBtn5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtn5.setText("5");
@@ -116,8 +110,7 @@ private void EnableNext()
                 jBtn5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtn5);
-        jBtn5.setBounds(172, 237, 63, 40);
+        getContentPane().add(jBtn5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 63, 40));
 
         jBtn6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtn6.setText("6");
@@ -126,8 +119,7 @@ private void EnableNext()
                 jBtn6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtn6);
-        jBtn6.setBounds(273, 237, 63, 40);
+        getContentPane().add(jBtn6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, 63, 40));
 
         jBtn3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtn3.setText("3");
@@ -136,8 +128,7 @@ private void EnableNext()
                 jBtn3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtn3);
-        jBtn3.setBounds(273, 295, 63, 40);
+        getContentPane().add(jBtn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 63, 40));
 
         jBtn1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtn1.setText("1");
@@ -146,8 +137,7 @@ private void EnableNext()
                 jBtn1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtn1);
-        jBtn1.setBounds(66, 295, 63, 40);
+        getContentPane().add(jBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 63, 40));
 
         jBtn2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtn2.setText("2");
@@ -156,8 +146,7 @@ private void EnableNext()
                 jBtn2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtn2);
-        jBtn2.setBounds(172, 295, 63, 40);
+        getContentPane().add(jBtn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 63, 40));
 
         jBtnC.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtnC.setText("C");
@@ -166,8 +155,7 @@ private void EnableNext()
                 jBtnCActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnC);
-        jBtnC.setBounds(208, 353, 128, 40);
+        getContentPane().add(jBtnC, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, 128, 40));
 
         jBtnNext.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtnNext.setText("Next");
@@ -177,8 +165,7 @@ private void EnableNext()
                 jBtnNextActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtnNext);
-        jBtnNext.setBounds(66, 399, 128, 40);
+        getContentPane().add(jBtnNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, 128, 40));
 
         jBtn0.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtn0.setText("0");
@@ -187,8 +174,7 @@ private void EnableNext()
                 jBtn0ActionPerformed(evt);
             }
         });
-        getContentPane().add(jBtn0);
-        jBtn0.setBounds(66, 353, 136, 40);
+        getContentPane().add(jBtn0, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, 136, 40));
 
         jButton1.setText("Check");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -196,12 +182,8 @@ private void EnableNext()
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(212, 406, 124, 28);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp_pc\\Desktop\\Webp.net-resizeimage (5).jpg")); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(-100, -30, 520, 510);
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, 124, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 475, 542, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

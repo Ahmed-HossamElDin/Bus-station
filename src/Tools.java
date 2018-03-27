@@ -122,6 +122,7 @@ public abstract class Tools {
             a.setPrice(Double.parseDouble(parts[1]));
             a.setTimeOfDeparture(parts[2]);
             a.setDateOfReturn(parts[3]);
+            a.setSeat(parts[4]);
             list.add(a);
         }
     }
@@ -285,7 +286,7 @@ public abstract class Tools {
             PrintWriter pw = new PrintWriter(bw, autoFlush);
             for (int i = 0; i < list.size(); i++) {
                 Ticket d = list.get(i);
-                String data = String.valueOf(d.getTicketNumber()) + '/' + d.getPrice()+ '/' + d.getTimeOfDeparture()+ '/' +d.getDateOfReturn();
+                String data = String.valueOf(d.getTicketNumber()) + '/' + d.getPrice()+ '/' + d.getTimeOfDeparture()+ '/' +d.getDateOfReturn()+ '/' +d.getSeat();
                 // System.out.println(data);
                 pw.printf(data);
                 if (i < list.size() - 1) {

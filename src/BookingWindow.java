@@ -15,7 +15,8 @@ import javax.swing.JTextField;
 
 public class BookingWindow extends javax.swing.JFrame {
 
-    //flag to enable next button
+    public Trip trip = new Trip();
+//flag to enable next button
     int internal = 0; //internal flag
     int vip = 0;  //vip flag
     int oneway = 0; //onewayflag
@@ -32,7 +33,6 @@ public class BookingWindow extends javax.swing.JFrame {
     String[] GizaSelectionCities = {"Cairo", "Alexandria"};
     Random rand = new Random();
     int n = rand.nextInt(99999) + 1;
-    Trip trip = new Trip();
     Ticket ticket = new Ticket();
 
     public BookingWindow() {
@@ -488,24 +488,24 @@ public class BookingWindow extends javax.swing.JFrame {
             String to = String.valueOf(jComboBox3.getSelectedItem());
             trip.setFrom(from);
             trip.setTo(to);
-            if (jComboBox3e.getSelectedIndex()==0 && jComboBox4e.getSelectedIndex()==0) {
+            if (jComboBox3e.getSelectedIndex() == 0 && jComboBox4e.getSelectedIndex() == 0) {
                 System.out.println("BookingWindow.jButton1ActionPerformed()");
                 distance = Tools.GetDistance(Cairo, Paris);
-            } else if (jComboBox3e.getSelectedIndex()==0 && jComboBox4e.getSelectedIndex()==1) {
+            } else if (jComboBox3e.getSelectedIndex() == 0 && jComboBox4e.getSelectedIndex() == 1) {
                 distance = Tools.GetDistance(Cairo, Moscow);
-            } else if (jComboBox3e.getSelectedIndex()==0 && jComboBox4e.getSelectedIndex()==2) {
+            } else if (jComboBox3e.getSelectedIndex() == 0 && jComboBox4e.getSelectedIndex() == 2) {
                 distance = Tools.GetDistance(Cairo, Barcelona);
-            } else if (jComboBox3e.getSelectedIndex()==1 && jComboBox4e.getSelectedIndex()==0) {
+            } else if (jComboBox3e.getSelectedIndex() == 1 && jComboBox4e.getSelectedIndex() == 0) {
                 distance = Tools.GetDistance(Alexandria, Paris);
-            } else if (jComboBox3e.getSelectedIndex()==1 && jComboBox4e.getSelectedIndex()==1) {
+            } else if (jComboBox3e.getSelectedIndex() == 1 && jComboBox4e.getSelectedIndex() == 1) {
                 distance = Tools.GetDistance(Alexandria, Moscow);
-            } else if (jComboBox3e.getSelectedIndex()==1 && jComboBox4e.getSelectedIndex()==2) {
+            } else if (jComboBox3e.getSelectedIndex() == 1 && jComboBox4e.getSelectedIndex() == 2) {
                 distance = Tools.GetDistance(Alexandria, Barcelona);
-            } else if (jComboBox3e.getSelectedIndex()==2 && jComboBox4e.getSelectedIndex()==0) {
+            } else if (jComboBox3e.getSelectedIndex() == 2 && jComboBox4e.getSelectedIndex() == 0) {
                 distance = Tools.GetDistance(Giza, Paris);
-            } else if (jComboBox3e.getSelectedIndex()==2 && jComboBox4e.getSelectedIndex()==1) {
+            } else if (jComboBox3e.getSelectedIndex() == 2 && jComboBox4e.getSelectedIndex() == 1) {
                 distance = Tools.GetDistance(Giza, Moscow);
-            } else if (jComboBox3e.getSelectedIndex()==2 && jComboBox4e.getSelectedIndex()==2) {
+            } else if (jComboBox3e.getSelectedIndex() == 2 && jComboBox4e.getSelectedIndex() == 2) {
                 distance = Tools.GetDistance(Giza, Barcelona);
             }
             trip.setDistance(Double.toString(distance));
@@ -524,6 +524,9 @@ public class BookingWindow extends javax.swing.JFrame {
             ticket.setPrice(Double.parseDouble(trip.getPrice()));
             ticket.setTimeOfDeparture(DateOfD);
             ticket.setTicketNumber(String.valueOf(n));
+            int m = rand.nextInt(49) + 1;
+            Double d = (double) m;
+            ticket.setSeat(d.toString());
             main.Tickets.add(ticket);
             Tools.WriteTicket(main.Tickets);
         } else {
@@ -532,19 +535,17 @@ public class BookingWindow extends javax.swing.JFrame {
             String to = jComboBox4.getSelectedItem().toString();
             trip.setFrom(from);
             trip.setTo(to);
-            if (jComboBox3.getSelectedIndex()==0 && jComboBox4.getSelectedIndex()==0) {
+            if (jComboBox3.getSelectedIndex() == 0 && jComboBox4.getSelectedIndex() == 0) {
                 distance = Tools.GetDistance(Cairo, Alexandria);
-            } else if (jComboBox3.getSelectedIndex()==0 && jComboBox4.getSelectedIndex()==1) {
+            } else if (jComboBox3.getSelectedIndex() == 0 && jComboBox4.getSelectedIndex() == 1) {
                 distance = Tools.GetDistance(Cairo, Giza);
-            } else if (jComboBox3.getSelectedIndex()==1 && jComboBox4.getSelectedIndex()==0) {
+            } else if (jComboBox3.getSelectedIndex() == 1 && jComboBox4.getSelectedIndex() == 0) {
                 distance = Tools.GetDistance(Alexandria, Cairo);
-            } else if (jComboBox3.getSelectedIndex()==1 && jComboBox4.getSelectedIndex()==1) {
+            } else if (jComboBox3.getSelectedIndex() == 1 && jComboBox4.getSelectedIndex() == 1) {
                 distance = Tools.GetDistance(Alexandria, Giza);
-            }
-
-             else if (jComboBox3.getSelectedIndex()==2 && jComboBox4.getSelectedIndex()==0) {
+            } else if (jComboBox3.getSelectedIndex() == 2 && jComboBox4.getSelectedIndex() == 0) {
                 distance = Tools.GetDistance(Giza, Cairo);
-            } else if (jComboBox3.getSelectedIndex()==2 && jComboBox4.getSelectedIndex()==1) {
+            } else if (jComboBox3.getSelectedIndex() == 2 && jComboBox4.getSelectedIndex() == 1) {
                 distance = Tools.GetDistance(Giza, Alexandria);
             }
 
@@ -563,14 +564,17 @@ public class BookingWindow extends javax.swing.JFrame {
             ticket.setPrice(Double.parseDouble(trip.getPrice()));
             ticket.setTimeOfDeparture(DateOfD);
             ticket.setTicketNumber(String.valueOf(n));
+            int m = rand.nextInt(49) + 1;
+            Double d = (double) m;
+            ticket.setSeat(d.toString());
             main.Tickets.add(ticket);
             Tools.WriteTicket(main.Tickets);
 
         }
 
-        ReserveChairWindow chair = new ReserveChairWindow();
+        TripInfo Trip = new TripInfo();
         this.setVisible(false);
-        chair.setVisible(true);
+        Trip.setVisible(true);
 
 
     }//GEN-LAST:event_jButton1ActionPerformed

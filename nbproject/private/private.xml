@@ -4,14 +4,15 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Adham%20ELGazar/Documents/GitHub/kaisaaa/src/DeleteTripWindow.java</file>
-            <file>file:/C:/Users/Adham%20ELGazar/Documents/GitHub/kaisaaa/src/EditTripWindow.java</file>
-            <file>file:/C:/Users/Adham%20ELGazar/Documents/GitHub/kaisaaa/src/VehiclePickingWindow.java</file>
-            <file>file:/C:/Users/Adham%20ELGazar/Documents/GitHub/kaisaaa/src/AddDriverWindow.java</file>
-            <file>file:/C:/Users/Adham%20ELGazar/Documents/GitHub/kaisaaa/src/ReserveChairWindow.java</file>
+            <file>file:/C:/Users/Adham%20ELGazar/Documents/GitHub/kaisaaa/src/BookingWindow.java</file>
+            <file>file:/C:/Users/Adham%20ELGazar/Documents/GitHub/kaisaaa/src/Ticket.java</file>
+            <file>file:/C:/Users/Adham%20ELGazar/Documents/GitHub/kaisaaa/src/TripInfo.java</file>
             <file>file:/C:/Users/Adham%20ELGazar/Documents/GitHub/kaisaaa/src/Trip.java</file>
+            <file>file:/C:/Users/Adham%20ELGazar/Documents/GitHub/kaisaaa/src/EmployeeLogin.java</file>
             <file>file:/C:/Users/Adham%20ELGazar/Documents/GitHub/kaisaaa/src/Tools.java</file>
             <file>file:/C:/Users/Adham%20ELGazar/Documents/GitHub/kaisaaa/src/App.java</file>
-            <file>file:/C:/Users/Adham%20ELGazar/Documents/GitHub/kaisaaa/src/SetTripWindow.java</file>
+            <file>file:/C:/Users/Adham%20ELGazar/Documents/GitHub/kaisaaa/src/PassengerWindow.java</file>
+            <file>file:/C:/Users/Adham%20ELGazar/Documents/GitHub/kaisaaa/src/CheckingTrip.java</file>
         </group>
     </open-files>
 </project-private>

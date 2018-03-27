@@ -67,13 +67,6 @@ public class Ticket {
         this.ticketNumber = ticketNumber;
     }
 
-    public String getSeat() {
-        return Seat;
-    }
-
-    public void setSeat(String Seat) {
-        this.Seat = Seat;
-    }
 
     public String getType() {
         return type;
@@ -90,5 +83,15 @@ public class Ticket {
     public void setWay(String way) {
         this.way = way;
     }
+
+    public String getSeat() {
+        return Seat;
+    }
+
+    public void setSeat(String Seat) {
+        this.Seat = Seat;
+    }
+
+    }
     
-}
+
