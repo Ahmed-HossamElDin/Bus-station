@@ -1,2 +1,1 @@
-Giza/Cairo/2.0/2.0/1/Mar 7, 2018,3/External/Bus
-Alexandria/Giza/112.0/112.0/4/Mar 15, 2018,3/Internal/Minibus
+Giza/Alexandria/112.0/112.0/2/Mar 2, 2018,/Internal/Bus

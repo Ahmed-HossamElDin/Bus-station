@@ -49,11 +49,16 @@ private void EnableNext()
         jBtnC = new javax.swing.JButton();
         jBtnNext = new javax.swing.JButton();
         jBtn0 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Enter ticket number :");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(6, 31, 217, 51);
 
         jtxtDisplay.setEnabled(false);
         jtxtDisplay.addActionListener(new java.awt.event.ActionListener() {
@@ -61,6 +66,8 @@ private void EnableNext()
                 jtxtDisplayActionPerformed(evt);
             }
         });
+        getContentPane().add(jtxtDisplay);
+        jtxtDisplay.setBounds(80, 110, 270, 34);
 
         jBtn7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtn7.setText("7");
@@ -69,6 +76,8 @@ private void EnableNext()
                 jBtn7ActionPerformed(evt);
             }
         });
+        getContentPane().add(jBtn7);
+        jBtn7.setBounds(66, 171, 63, 40);
 
         jBtn8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtn8.setText("8");
@@ -77,6 +86,8 @@ private void EnableNext()
                 jBtn8ActionPerformed(evt);
             }
         });
+        getContentPane().add(jBtn8);
+        jBtn8.setBounds(172, 171, 63, 40);
 
         jBtn9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtn9.setText("9");
@@ -85,6 +96,8 @@ private void EnableNext()
                 jBtn9ActionPerformed(evt);
             }
         });
+        getContentPane().add(jBtn9);
+        jBtn9.setBounds(273, 171, 63, 40);
 
         jBtn4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtn4.setText("4");
@@ -93,6 +106,8 @@ private void EnableNext()
                 jBtn4ActionPerformed(evt);
             }
         });
+        getContentPane().add(jBtn4);
+        jBtn4.setBounds(66, 237, 63, 40);
 
         jBtn5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtn5.setText("5");
@@ -101,6 +116,8 @@ private void EnableNext()
                 jBtn5ActionPerformed(evt);
             }
         });
+        getContentPane().add(jBtn5);
+        jBtn5.setBounds(172, 237, 63, 40);
 
         jBtn6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtn6.setText("6");
@@ -109,6 +126,8 @@ private void EnableNext()
                 jBtn6ActionPerformed(evt);
             }
         });
+        getContentPane().add(jBtn6);
+        jBtn6.setBounds(273, 237, 63, 40);
 
         jBtn3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtn3.setText("3");
@@ -117,6 +136,8 @@ private void EnableNext()
                 jBtn3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jBtn3);
+        jBtn3.setBounds(273, 295, 63, 40);
 
         jBtn1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtn1.setText("1");
@@ -125,6 +146,8 @@ private void EnableNext()
                 jBtn1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jBtn1);
+        jBtn1.setBounds(66, 295, 63, 40);
 
         jBtn2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtn2.setText("2");
@@ -133,6 +156,8 @@ private void EnableNext()
                 jBtn2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jBtn2);
+        jBtn2.setBounds(172, 295, 63, 40);
 
         jBtnC.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtnC.setText("C");
@@ -141,6 +166,8 @@ private void EnableNext()
                 jBtnCActionPerformed(evt);
             }
         });
+        getContentPane().add(jBtnC);
+        jBtnC.setBounds(208, 353, 128, 40);
 
         jBtnNext.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtnNext.setText("Next");
@@ -150,6 +177,8 @@ private void EnableNext()
                 jBtnNextActionPerformed(evt);
             }
         });
+        getContentPane().add(jBtnNext);
+        jBtnNext.setBounds(66, 399, 128, 40);
 
         jBtn0.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBtn0.setText("0");
@@ -158,77 +187,21 @@ private void EnableNext()
                 jBtn0ActionPerformed(evt);
             }
         });
+        getContentPane().add(jBtn0);
+        jBtn0.setBounds(66, 353, 136, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jBtn7, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jBtn8, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(38, 38, 38)
-                                .addComponent(jBtn9, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jtxtDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jBtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jBtn5, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(38, 38, 38)
-                                .addComponent(jBtn6, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(38, 38, 38)
-                                .addComponent(jBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jBtn0, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jBtnC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(jBtnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(72, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jtxtDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtn7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtn8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtn9, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtn4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtn5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtn6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtn0, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtnC, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jBtnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        jButton1.setText("Check");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(212, 406, 124, 28);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp_pc\\Desktop\\Webp.net-resizeimage (5).jpg")); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(-100, -30, 520, 510);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -247,8 +220,9 @@ private void EnableNext()
             jtxtDisplay.setText("");
             x=0;
         }
-        else
+        else if (x==5)
         {
+            
             BookDetails tripD = new BookDetails();
             tripD.setVisible(true);
             this.setVisible(false);
@@ -264,45 +238,54 @@ private void EnableNext()
         EnableNext();
         String Number = jtxtDisplay.getText() + jBtn9.getText();
         jtxtDisplay.setText(Number);
+        x++;
     }//GEN-LAST:event_jBtn9ActionPerformed
 
     private void jBtn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn8ActionPerformed
         EnableNext();
         String Number = jtxtDisplay.getText() + jBtn8.getText();
+        x++;
         jtxtDisplay.setText(Number);    }//GEN-LAST:event_jBtn8ActionPerformed
 
     private void jBtn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn7ActionPerformed
         EnableNext();
+        x++;
         String Number = jtxtDisplay.getText() + jBtn7.getText();
         jtxtDisplay.setText(Number);    }//GEN-LAST:event_jBtn7ActionPerformed
 
     private void jBtn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn6ActionPerformed
  EnableNext();  
+ x++;
         String Number = jtxtDisplay.getText() + jBtn6.getText();
         jtxtDisplay.setText(Number);    }//GEN-LAST:event_jBtn6ActionPerformed
 
     private void jBtn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn5ActionPerformed
         EnableNext();
+        x++;
         String Number = jtxtDisplay.getText() + jBtn5.getText();
         jtxtDisplay.setText(Number);    }//GEN-LAST:event_jBtn5ActionPerformed
 
     private void jBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn3ActionPerformed
         EnableNext();
+        x++;
         String Number = jtxtDisplay.getText() + jBtn3.getText();
         jtxtDisplay.setText(Number);    }//GEN-LAST:event_jBtn3ActionPerformed
 
     private void jBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn2ActionPerformed
         EnableNext();
+        x++;
         String Number = jtxtDisplay.getText() + jBtn2.getText();
         jtxtDisplay.setText(Number);    }//GEN-LAST:event_jBtn2ActionPerformed
 
     private void jBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn1ActionPerformed
         EnableNext();
+        x++;
         String Number = jtxtDisplay.getText() + jBtn1.getText();
         jtxtDisplay.setText(Number);    }//GEN-LAST:event_jBtn1ActionPerformed
 
     private void jBtn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn0ActionPerformed
         EnableNext();
+        x++;
         String Number = jtxtDisplay.getText() + jBtn0.getText();
         jtxtDisplay.setText(Number);    }//GEN-LAST:event_jBtn0ActionPerformed
 
@@ -320,6 +303,21 @@ private void EnableNext()
             jtxtDisplay.setText(storing);
         }
     }//GEN-LAST:event_jBtnCActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+  if(x>5)
+        {
+            Toolkit.getDefaultToolkit().beep();
+            String warning = "Ticket number consists of 5 digits only.";
+            JOptionPane.showMessageDialog(null, warning);
+            jtxtDisplay.setText("");
+            x=0;
+        }
+         if (x==5)
+        {
+            jBtnNext.setEnabled(true);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -369,7 +367,9 @@ private void EnableNext()
     private javax.swing.JButton jBtn9;
     private javax.swing.JButton jBtnC;
     private javax.swing.JButton jBtnNext;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jtxtDisplay;
     // End of variables declaration//GEN-END:variables
 }

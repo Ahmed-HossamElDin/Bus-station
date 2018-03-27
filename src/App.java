@@ -31,7 +31,7 @@ public class App extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Passenger);
-        Passenger.setBounds(180, 260, 95, 25);
+        Passenger.setBounds(180, 260, 90, 29);
 
         Employee.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Employee.setText("Employee");
@@ -41,16 +41,16 @@ public class App extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Employee);
-        Employee.setBounds(40, 260, 93, 25);
+        Employee.setBounds(40, 260, 90, 30);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Choose type of user :");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(90, 220, 148, 17);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Adham ELGazar\\Desktop\\Webp.net-resizeimage (1).jpg")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp_pc\\Desktop\\Webp.net-resizeimage.jpg")); // NOI18N
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(0, 0, 520, 330);
+        jLabel3.setBounds(-30, 0, 340, 330);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
