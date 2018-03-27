@@ -15,6 +15,6 @@ public interface Vip {
     public static void Login(String username , String password)
     {
         File file = new File("Vip.txt");
-    int linenumber = Tools.Search(file, username);
+
     }
 }

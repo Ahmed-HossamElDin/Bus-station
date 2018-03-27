@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /*
@@ -26,24 +27,17 @@ public abstract class Tools {
      * @param key
      * @return
      */
-    public static int Search(File file, String key) {
-        int lineNumber = 0;
-        int flag = 0;
-        try {
-            Scanner scanner = new Scanner(file);
-            while (scanner.hasNextLine()) {
-                lineNumber++;
-                String lineFromFile = scanner.nextLine();
-                if (lineFromFile.contains(key)) // found the key in file
-                { flag  = 1;
-                    break;
-                }
+    public static String[] SearchTrip(List<Trip> trip, String from , String to ,String date) {
+        String [] dates = new String[10]; 
+        Trip t = new Trip();
+        for(int i = 0 ; i < trip.size() ; i++)
+        {
+            if (from == trip.get(i).getFrom() && to == trip.get(i).getTo() && date == trip.get(i).getDateOfDeparture())
+            {
+                dates[i] = date;              
             }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Tools.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        return lineNumber;
+        return dates;
     }
 
     public static void GetDrivers(List<Driver> list) throws FileNotFoundException, IOException {

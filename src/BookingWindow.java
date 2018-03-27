@@ -40,8 +40,9 @@ public class BookingWindow extends javax.swing.JFrame {
         jComboBox3e.setVisible(false);
         jComboBox4e.setVisible(false);
         jLabel3.setVisible(false);
-        time2.setVisible(false);
         date2.setVisible(false);
+        time2.setVisible(false);
+
         try {
             Tools.GetTicket(main.Tickets);
         } catch (IOException ex) {
@@ -93,11 +94,14 @@ public class BookingWindow extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         time1 = new javax.swing.JTextField();
         time2 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Type of Customer :");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 16, -1, -1));
 
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -107,6 +111,7 @@ public class BookingWindow extends javax.swing.JFrame {
                 jRadioButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(208, 35, -1, -1));
 
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -116,9 +121,11 @@ public class BookingWindow extends javax.swing.JFrame {
                 jRadioButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(443, 35, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Trip type :");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 126, -1, -1));
 
         buttonGroup2.add(jRadioButton3);
         jRadioButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -128,6 +135,7 @@ public class BookingWindow extends javax.swing.JFrame {
                 jRadioButton3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 148, -1, -1));
 
         buttonGroup2.add(jRadioButton4);
         jRadioButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -137,15 +145,19 @@ public class BookingWindow extends javax.swing.JFrame {
                 jRadioButton4ActionPerformed(evt);
             }
         });
+        getContentPane().add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(469, 148, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Date and time of Return :");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 285, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("Date and time of Departure :");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 285, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("From :");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 344, -1, -1));
 
         jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cairo", "Alexandria", "Giza" }));
@@ -154,9 +166,11 @@ public class BookingWindow extends javax.swing.JFrame {
                 jComboBox3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 153, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("To :");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 350, -1, -1));
 
         jComboBox4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alexandria", "Giza" }));
@@ -165,9 +179,12 @@ public class BookingWindow extends javax.swing.JFrame {
                 jComboBox4ActionPerformed(evt);
             }
         });
+        getContentPane().add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 384, 153, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 206, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setText("Number of stops :");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 212, -1, -1));
 
         jComboBox5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3" }));
@@ -176,6 +193,7 @@ public class BookingWindow extends javax.swing.JFrame {
                 jComboBox5ActionPerformed(evt);
             }
         });
+        getContentPane().add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 50, -1));
 
         buttonGroup3.add(jRadioButton6);
         jRadioButton6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -185,9 +203,11 @@ public class BookingWindow extends javax.swing.JFrame {
                 jRadioButton6ActionPerformed(evt);
             }
         });
+        getContentPane().add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(167, 438, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel9.setText("Ticket type :");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 438, -1, -1));
 
         buttonGroup3.add(jRadioButton7);
         jRadioButton7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -197,6 +217,7 @@ public class BookingWindow extends javax.swing.JFrame {
                 jRadioButton7ActionPerformed(evt);
             }
         });
+        getContentPane().add(jRadioButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(167, 474, 78, -1));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Next");
@@ -206,6 +227,9 @@ public class BookingWindow extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 523, 123, 31));
+        getContentPane().add(date1, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 310, 181, -1));
+        getContentPane().add(date2, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 310, 186, -1));
 
         test.setText("Check");
         test.addActionListener(new java.awt.event.ActionListener() {
@@ -213,16 +237,21 @@ public class BookingWindow extends javax.swing.JFrame {
                 testActionPerformed(evt);
             }
         });
+        getContentPane().add(test, new org.netbeans.lib.awtextra.AbsoluteConstraints(372, 525, 102, -1));
 
         ulabel.setText("ID :");
         ulabel.setEnabled(false);
+        getContentPane().add(ulabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 98, -1, -1));
 
         ufield.setEnabled(false);
+        getContentPane().add(ufield, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 92, 139, -1));
 
         plabel.setText("Password :");
         plabel.setEnabled(false);
+        getContentPane().add(plabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 98, -1, -1));
 
         pfield.setEnabled(false);
+        getContentPane().add(pfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 92, 137, -1));
 
         jComboBox4e.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jComboBox4e.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paris", "Moscow", "Barcelona" }));
@@ -231,6 +260,7 @@ public class BookingWindow extends javax.swing.JFrame {
                 jComboBox4eActionPerformed(evt);
             }
         });
+        getContentPane().add(jComboBox4e, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 350, 153, -1));
 
         jComboBox3e.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jComboBox3e.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cairo", "Alexandria", "Giza" }));
@@ -239,186 +269,30 @@ public class BookingWindow extends javax.swing.JFrame {
                 jComboBox3eActionPerformed(evt);
             }
         });
+        getContentPane().add(jComboBox3e, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 153, 28));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, -1, -1));
 
         time1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 time1ActionPerformed(evt);
             }
         });
+        getContentPane().add(time1, new org.netbeans.lib.awtextra.AbsoluteConstraints(277, 310, 60, -1));
 
         time2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 time2ActionPerformed(evt);
             }
         });
+        getContentPane().add(time2, new org.netbeans.lib.awtextra.AbsoluteConstraints(714, 310, 61, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(69, 69, 69)
-                                .addComponent(date1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(time1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(43, 43, 43)
-                                .addComponent(jLabel5)
-                                .addGap(65, 65, 65)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox3e, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(179, 179, 179)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(date2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(time2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jComboBox4e, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(59, 59, 59)
-                                .addComponent(jLabel1))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(208, 208, 208)
-                                .addComponent(jRadioButton1)
-                                .addGap(193, 193, 193)
-                                .addComponent(jRadioButton2))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(59, 59, 59)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jLabel8)
-                                        .addGap(90, 90, 90)
-                                        .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(ulabel)
-                                        .addGap(45, 45, 45)
-                                        .addComponent(ufield, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(89, 89, 89)
-                                        .addComponent(plabel)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(pfield, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(59, 59, 59)
-                                .addComponent(jLabel2))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(223, 223, 223)
-                                .addComponent(jRadioButton3)
-                                .addGap(178, 178, 178)
-                                .addComponent(jRadioButton4)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(85, 85, 85))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(jLabel4)
-                        .addGap(174, 174, 174)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel11))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(179, 179, 179)
-                        .addComponent(jLabel7))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(190, 190, 190)
-                        .addComponent(test, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(167, 167, 167)
-                        .addComponent(jRadioButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(jLabel9)
-                        .addGap(31, 31, 31)
-                        .addComponent(jRadioButton6)))
-                .addGap(180, 293, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel11)
-                .addGap(16, 16, 16)
-                .addComponent(jLabel1)
-                .addGap(2, 2, 2)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ufield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ulabel)
-                            .addComponent(plabel))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(5, 5, 5)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4))
-                .addGap(40, 40, 40)
-                .addComponent(jLabel7)
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3))
-                        .addGap(8, 8, 8)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(date2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel6))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(date1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(time1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(time2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jComboBox3e, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jComboBox4e, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addComponent(jRadioButton6))
-                .addGap(18, 18, 18)
-                .addComponent(jRadioButton7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(test)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21))
-        );
+        jButton2.setText("Back");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 530, 90, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -433,6 +307,7 @@ public class BookingWindow extends javax.swing.JFrame {
         jComboBox4.setVisible(true);
         jComboBox3e.setVisible(false);
         jComboBox4e.setVisible(false);
+
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
@@ -459,8 +334,8 @@ public class BookingWindow extends javax.swing.JFrame {
 
     private void jRadioButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton7ActionPerformed
         jLabel3.setVisible(true);
-        time2.setVisible(true);
         date2.setVisible(true);
+        time2.setVisible(true);
         oneway = 0;
     }//GEN-LAST:event_jRadioButton7ActionPerformed
 
@@ -473,7 +348,7 @@ public class BookingWindow extends javax.swing.JFrame {
             main.Rate = 1.7;
             Date d2 = date2.getDate();
             String strDate2 = DateFormat.getDateInstance().format(d2);
-            String DateOfR = strDate2 + "," + time2.getText();
+            String DateOfR = strDate2;
             ticket.setDateOfReturn(DateOfR);
         }
         if (vip == 0) {
@@ -484,10 +359,7 @@ public class BookingWindow extends javax.swing.JFrame {
 
         if (internal == 0) {
             Double distance = 700.0;
-            String from = String.valueOf(jComboBox3.getSelectedItem());
-            String to = String.valueOf(jComboBox3.getSelectedItem());
-            trip.setFrom(from);
-            trip.setTo(to);
+
             if (jComboBox3e.getSelectedIndex() == 0 && jComboBox4e.getSelectedIndex() == 0) {
                 System.out.println("BookingWindow.jButton1ActionPerformed()");
                 distance = Tools.GetDistance(Cairo, Paris);
@@ -515,7 +387,7 @@ public class BookingWindow extends javax.swing.JFrame {
             trip.setNumberOfStops(jComboBox5.getSelectedItem().toString());
             Date d1 = date1.getDate();
             String strDate1 = DateFormat.getDateInstance().format(d1);
-            String DateOfD = strDate1 + "," + time1.getText();
+            String DateOfD = strDate1;
             trip.setDateOfDeparture(DateOfD);
 
             {
@@ -531,8 +403,8 @@ public class BookingWindow extends javax.swing.JFrame {
             Tools.WriteTicket(main.Tickets);
         } else {
             Double distance = null;
-            String from = jComboBox3.getSelectedItem().toString();
-            String to = jComboBox4.getSelectedItem().toString();
+            String from = String.valueOf(jComboBox3.getSelectedItem());
+            String to = String.valueOf(jComboBox3.getSelectedItem());
             trip.setFrom(from);
             trip.setTo(to);
             if (jComboBox3.getSelectedIndex() == 0 && jComboBox4.getSelectedIndex() == 0) {
@@ -556,7 +428,7 @@ public class BookingWindow extends javax.swing.JFrame {
             trip.setNumberOfStops(jComboBox5.getSelectedItem().toString());
             Date d1 = date1.getDate();
             String strDate1 = DateFormat.getDateInstance().format(d1);
-            String DateOfD = strDate1 + "," + time1.getText();
+            String DateOfD = strDate1;
             trip.setDateOfDeparture(DateOfD);
             {
                 ticket.setType("Internal");
@@ -634,6 +506,7 @@ public class BookingWindow extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please select Customer type!", "Warning!", JOptionPane.ERROR_MESSAGE);
             return;
         }
+
         jButton1.setEnabled(true);
     }//GEN-LAST:event_testActionPerformed
 
@@ -652,17 +525,20 @@ public class BookingWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox3eActionPerformed
 
-    private void time1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_time1ActionPerformed
+    private void jComboBox4eActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4eActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_time1ActionPerformed
+    }//GEN-LAST:event_jComboBox4eActionPerformed
 
     private void time2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_time2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_time2ActionPerformed
 
-    private void jComboBox4eActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4eActionPerformed
+    private void time1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_time1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox4eActionPerformed
+    }//GEN-LAST:event_time1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+this.setVisible(false);    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -706,6 +582,7 @@ public class BookingWindow extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser date1;
     private com.toedter.calendar.JDateChooser date2;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox3e;
     private javax.swing.JComboBox<String> jComboBox4;
