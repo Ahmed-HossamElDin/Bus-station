@@ -19,7 +19,6 @@ public class App extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(250, 360));
-        setPreferredSize(new java.awt.Dimension(330, 250));
         setSize(new java.awt.Dimension(290, 330));
         getContentPane().setLayout(null);
 
@@ -31,7 +30,7 @@ public class App extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Passenger);
-        Passenger.setBounds(180, 260, 90, 29);
+        Passenger.setBounds(180, 260, 95, 25);
 
         Employee.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Employee.setText("Employee");
@@ -47,8 +46,6 @@ public class App extends javax.swing.JFrame {
         jLabel1.setText("Choose type of user :");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(90, 220, 148, 17);
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp_pc\\Desktop\\Webp.net-resizeimage.jpg")); // NOI18N
         getContentPane().add(jLabel3);
         jLabel3.setBounds(-30, 0, 340, 330);
 
