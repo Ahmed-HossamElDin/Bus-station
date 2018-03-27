@@ -43,9 +43,7 @@ public class TripInfo extends javax.swing.JFrame {
         TripType.setText(t.getType());
         TicketNo.setText(t.getTicketNumber());
         Departure.setText(t.getTimeOfDeparture());
-        int i =Integer.parseInt(t.getSeat());
-        String j = String.valueOf(i);
-        Seat.setText(j);
+        Seat.setText(t.getSeat());
         TripType.setText(tr.getType());
         From.setText(tr.getFrom());
         To.setText(tr.getTo());
@@ -85,6 +83,7 @@ public class TripInfo extends javax.swing.JFrame {
         Price = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         TicketNo = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -167,8 +166,16 @@ public class TripInfo extends javax.swing.JFrame {
         });
         getContentPane().add(TicketNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 75, 238, -1));
 
+        jButton1.setText("Main Menu");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 460, -1, -1));
+
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/background.jpg"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 450));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -184,6 +191,12 @@ public class TripInfo extends javax.swing.JFrame {
     private void PriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PriceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PriceActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+this.setVisible(false);
+App main= new App();
+main.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -229,6 +242,7 @@ public class TripInfo extends javax.swing.JFrame {
     private javax.swing.JTextField TicketNo;
     private javax.swing.JTextField To;
     private javax.swing.JTextField TripType;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
