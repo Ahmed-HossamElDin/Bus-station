@@ -18,8 +18,9 @@ public class Trip {
     private String numberOfStops;
     private String DateOfDeparture;
     private String type;
+    private String Vehicle;
 
-    public Trip(String to, String from, String typeOfVehicle, String price, String distance, String numberOfStops, String DateOfDeparture, String type) {
+    public Trip(String to, String from, String typeOfVehicle, String price, String distance, String numberOfStops, String DateOfDeparture, String type,String Vehicle) {
         this.to = to;
         this.from = from;
         this.typeOfVehicle = typeOfVehicle;
@@ -28,6 +29,7 @@ public class Trip {
         this.numberOfStops = numberOfStops;
         this.DateOfDeparture = DateOfDeparture;
         this.type = type;
+        this.Vehicle = Vehicle;
     }
 
     public String getType() {
@@ -109,6 +111,14 @@ public class Trip {
         result = (Double.parseDouble(this.getDistance()) * rateperkm);
         Math.floor(result);
         return result;
+    }
+
+    public String getVehicle() {
+        return Vehicle;
+    }
+
+    public void setVehicle(String Vehicle) {
+        this.Vehicle = Vehicle;
     }
 
 

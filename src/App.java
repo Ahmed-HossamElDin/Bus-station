@@ -9,14 +9,19 @@ public class App extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
         Passenger = new javax.swing.JButton();
         Employee = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+
+        jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(349, 200));
-        setPreferredSize(new java.awt.Dimension(349, 250));
-        setSize(new java.awt.Dimension(200, 200));
+        setMinimumSize(new java.awt.Dimension(250, 360));
+        setPreferredSize(new java.awt.Dimension(330, 250));
+        setSize(new java.awt.Dimension(290, 330));
+        getContentPane().setLayout(null);
 
         Passenger.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Passenger.setText("Passenger");
@@ -25,6 +30,8 @@ public class App extends javax.swing.JFrame {
                 PassengerActionPerformed(evt);
             }
         });
+        getContentPane().add(Passenger);
+        Passenger.setBounds(180, 260, 95, 25);
 
         Employee.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Employee.setText("Employee");
@@ -33,38 +40,17 @@ public class App extends javax.swing.JFrame {
                 EmployeeActionPerformed(evt);
             }
         });
+        getContentPane().add(Employee);
+        Employee.setBounds(40, 260, 93, 25);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Choose type of user :");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(90, 220, 148, 17);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(Passenger, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(Employee, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(31, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(Passenger, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(Employee, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Adham ELGazar\\Desktop\\Webp.net-resizeimage (1).jpg")); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(0, 0, 520, 330);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -123,5 +109,7 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JButton Employee;
     private javax.swing.JButton Passenger;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }//haha

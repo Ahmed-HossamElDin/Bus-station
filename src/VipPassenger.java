@@ -11,19 +11,20 @@
  * @author ahate
  */
 public class VipPassenger extends Passenger implements Vip {
-private String ID;
+private String Username;
 private String Password;
     VipPassenger() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
-    public String getID() {
-        return ID;
+    public String getUsername() {
+        return Username;
     }
 
-    public void setID(String ID) {
-        this.ID = ID;
+    public void setUsername(String Username) {
+        this.Username = Username;
     }
+
 
     public String getPassword() {
         return Password;

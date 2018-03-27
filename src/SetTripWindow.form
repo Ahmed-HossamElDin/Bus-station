@@ -82,9 +82,9 @@
                                   <Component id="jComboBox3" min="-2" pref="143" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jComboBox4e" min="-2" pref="153" max="-2" attributes="0"/>
-                                  <Component id="jComboBox4" min="-2" pref="143" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jComboBox4e" max="32767" attributes="0"/>
+                                  <Component id="jComboBox4" pref="143" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>

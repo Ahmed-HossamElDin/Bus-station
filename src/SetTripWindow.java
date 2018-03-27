@@ -1,7 +1,10 @@
 
 import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.String;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
@@ -34,7 +37,11 @@ public class SetTripWindow extends javax.swing.JFrame {
      * Creates new form EditTripWindow
      */
     public SetTripWindow() {
-
+        try {
+            Tools.GetTrips(main.Trips);
+        } catch (IOException ex) {
+            Logger.getLogger(SetTripWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
         initComponents();
     }
 
@@ -208,9 +215,9 @@ public class SetTripWindow extends javax.swing.JFrame {
                                     .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(39, 39, 39)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox4e, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jComboBox4e, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jComboBox4, 0, 143, Short.MAX_VALUE))))))
                 .addContainerGap(66, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(121, 121, 121)
@@ -268,44 +275,38 @@ public class SetTripWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (jRadioButton3.isSelected()) {
-            trip.setType("internal");
-        } else {
+        if (jRadioButton4.isSelected()) {
             trip.setType("External");
+        } else {
+            trip.setType("Internal");
+          if (jComboBox6.getSelectedIndex() == 0) {
+            trip.setVehicle("Bus");
+        } else if (jComboBox6.getSelectedIndex() == 1) {
+            trip.setVehicle("Minibus");
+        } else if (jComboBox6.getSelectedIndex() == 2) {
+            trip.setVehicle("Limousine");
         }
+    
+        
         Double distance = null;
         String from = jComboBox3.getSelectedItem().toString();
         String to = jComboBox4.getSelectedItem().toString();
         trip.setFrom(from);
         trip.setTo(to);
-           switch (from) {
-                case "Cairo": {
-                    switch (to) {
-                        case "Alexandria":
-                            distance = Tools.GetDistance(Cairo, Alexandria);
-                        case "Giza":
-                            distance = Tools.GetDistance(Cairo, Giza);
-                    }
-                }
-                case "Alexandria": {
-                    switch (to) {
-                        case "Cairo":
-                            distance = Tools.GetDistance(Alexandria, Cairo);
-                        case "Giza":
-                            distance = Tools.GetDistance(Alexandria, Giza);
-
-                    }
-                }
-                case "Giza": {
-                    switch (to) {
-                        case "Cairo":
-                            distance = Tools.GetDistance(Giza, Cairo);
-                        case "Alexandria":
-                            distance = Tools.GetDistance(Giza, Alexandria);
-                    }
-                }
+            if (jComboBox3.getSelectedIndex()==0 && jComboBox4.getSelectedIndex()==0) {
+                distance = Tools.GetDistance(Cairo, Alexandria);
+            } else if (jComboBox3.getSelectedIndex()==0 && jComboBox4.getSelectedIndex()==1) {
+                distance = Tools.GetDistance(Cairo, Giza);
+            } else if (jComboBox3.getSelectedIndex()==1 && jComboBox4.getSelectedIndex()==0) {
+                distance = Tools.GetDistance(Alexandria, Cairo);
+            } else if (jComboBox3.getSelectedIndex()==1 && jComboBox4.getSelectedIndex()==1) {
+                distance = Tools.GetDistance(Alexandria, Giza);
             }
-        
+             else if (jComboBox3.getSelectedIndex()==2 && jComboBox4.getSelectedIndex()==0) {
+                distance = Tools.GetDistance(Giza, Cairo);
+            } else if (jComboBox3.getSelectedIndex()==2 && jComboBox4.getSelectedIndex()==1) {
+                distance = Tools.GetDistance(Giza, Alexandria);
+            }
         trip.setDistance(Double.toString(distance));
         Double price = (trip.CalculatePrice());
         String p = Double.toString(price);
@@ -317,7 +318,8 @@ public class SetTripWindow extends javax.swing.JFrame {
         trip.setDateOfDeparture(DateOfD);
         trip.setTypeOfVehicle(jComboBox6.getSelectedItem().toString());
         main.Trips.add(trip);
-        Tools.WriteTicket(main.Tickets);
+        Tools.WriteTrip(main.Trips);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed

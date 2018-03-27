@@ -1,4 +1,5 @@
 
+import java.io.IOException;
 import java.text.DateFormat;
 import javax.swing.ComboBoxModel;
 import javax.swing.JComboBox;
@@ -15,10 +16,11 @@ import javax.swing.JTextField;
 public class BookingWindow extends javax.swing.JFrame {
 
     //flag to enable next button
-
     int internal = 0; //internal flag
     int vip = 0;  //vip flag
     int oneway = 0; //onewayflag
+    int city1 = 0;
+    int city2 = 0;
     City Alexandria = new City(31.2001, 29.9187); //Cities coordinates to calculate distance
     City Cairo = new City(30.0444, 31.2357);
     City Giza = new City(30.0131, 31.2089);
@@ -40,6 +42,11 @@ public class BookingWindow extends javax.swing.JFrame {
         jLabel3.setVisible(false);
         time2.setVisible(false);
         date2.setVisible(false);
+        try {
+            Tools.GetTicket(main.Tickets);
+        } catch (IOException ex) {
+            Logger.getLogger(BookingWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 
@@ -272,12 +279,8 @@ public class BookingWindow extends javax.swing.JFrame {
                                 .addComponent(date2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(12, 12, 12)
                                 .addComponent(time2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox4e, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(25, 25, 25))))
+                            .addComponent(jComboBox4e, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -339,7 +342,7 @@ public class BookingWindow extends javax.swing.JFrame {
                         .addComponent(jLabel9)
                         .addGap(31, 31, 31)
                         .addComponent(jRadioButton6)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(180, 293, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -464,70 +467,57 @@ public class BookingWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton7ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (oneway == 0) {
+        if (oneway == 1) {
             ticket.setWay("One-way");
+            ticket.setDateOfReturn("Null");
         } else {
             ticket.setWay("Return");
             main.Rate = 1.7;
+            Date d2 = date2.getDate();
+            String strDate2 = DateFormat.getDateInstance().format(d2);
+            String DateOfR = strDate2 + "," + time2.getText();
+            ticket.setDateOfReturn(DateOfR);
         }
-        if (vip == 0)
-        {
-            
+        if (vip == 0) {
+
+        } else {
+            main.VipRate = 0.5;
         }
-        else
-        {
-           main.VipRate = 0.5; 
-        }
-        
+
         if (internal == 0) {
-            Double distance = null;
-            String from = jComboBox3.getSelectedItem().toString();
-            String to = jComboBox4.getSelectedItem().toString();
+            Double distance = 700.0;
+            String from = String.valueOf(jComboBox3.getSelectedItem());
+            String to = String.valueOf(jComboBox3.getSelectedItem());
             trip.setFrom(from);
             trip.setTo(to);
-            switch (from) {
-                case "Cairo": {
-                    switch (to) {
-                        case "Paris":
-                            distance = Tools.GetDistance(Cairo, Paris);
-                        case "Moscow":
-                            distance = Tools.GetDistance(Cairo, Moscow);
-                        case "Barcelona":
-                            distance = Tools.GetDistance(Cairo, Barcelona);
-                    }
-                }
-                case "Alexandria": {
-                    switch (to) {
-                        case "Paris":
-                            distance = Tools.GetDistance(Alexandria, Paris);
-                        case "Moscow":
-                            distance = Tools.GetDistance(Alexandria, Moscow);
-                        case "Barcelona":
-                            distance = Tools.GetDistance(Alexandria, Barcelona);
-                    }
-                }
-                case "Giza": {
-                    switch (to) {
-                        case "Paris":
-                            distance = Tools.GetDistance(Giza, Paris);
-                        case "Moscow":
-                            distance = Tools.GetDistance(Giza, Moscow);
-                        case "Barcelona":
-                            distance = Tools.GetDistance(Giza, Barcelona);
-                    }
-                }
+            if (jComboBox3e.getSelectedIndex()==0 && jComboBox4e.getSelectedIndex()==0) {
+                System.out.println("BookingWindow.jButton1ActionPerformed()");
+                distance = Tools.GetDistance(Cairo, Paris);
+            } else if (jComboBox3e.getSelectedIndex()==0 && jComboBox4e.getSelectedIndex()==1) {
+                distance = Tools.GetDistance(Cairo, Moscow);
+            } else if (jComboBox3e.getSelectedIndex()==0 && jComboBox4e.getSelectedIndex()==2) {
+                distance = Tools.GetDistance(Cairo, Barcelona);
+            } else if (jComboBox3e.getSelectedIndex()==1 && jComboBox4e.getSelectedIndex()==0) {
+                distance = Tools.GetDistance(Alexandria, Paris);
+            } else if (jComboBox3e.getSelectedIndex()==1 && jComboBox4e.getSelectedIndex()==1) {
+                distance = Tools.GetDistance(Alexandria, Moscow);
+            } else if (jComboBox3e.getSelectedIndex()==1 && jComboBox4e.getSelectedIndex()==2) {
+                distance = Tools.GetDistance(Alexandria, Barcelona);
+            } else if (jComboBox3e.getSelectedIndex()==2 && jComboBox4e.getSelectedIndex()==0) {
+                distance = Tools.GetDistance(Giza, Paris);
+            } else if (jComboBox3e.getSelectedIndex()==2 && jComboBox4e.getSelectedIndex()==1) {
+                distance = Tools.GetDistance(Giza, Moscow);
+            } else if (jComboBox3e.getSelectedIndex()==2 && jComboBox4e.getSelectedIndex()==2) {
+                distance = Tools.GetDistance(Giza, Barcelona);
             }
-            trip.setDistance(distance.toString());
+            trip.setDistance(Double.toString(distance));
             Double price = (main.VipRate * main.Rate * trip.CalculatePrice());
             String FinalPrice = String.valueOf(price);
             trip.setPrice(FinalPrice);
             trip.setNumberOfStops(jComboBox5.getSelectedItem().toString());
             Date d1 = date1.getDate();
             String strDate1 = DateFormat.getDateInstance().format(d1);
-            Date d2 = date2.getDate();
-            String strDate2 = DateFormat.getDateInstance().format(d2);
             String DateOfD = strDate1 + "," + time1.getText();
-            String DateOfR = strDate2 + "," + time2.getText();
             trip.setDateOfDeparture(DateOfD);
 
             {
@@ -535,8 +525,6 @@ public class BookingWindow extends javax.swing.JFrame {
             }
             ticket.setPrice(Double.parseDouble(trip.getPrice()));
             ticket.setTimeOfDeparture(DateOfD);
-            ticket.setDateOfReturn(DateOfR);
-            ticket.setTicketNumber(DateOfR);
             ticket.setTicketNumber(String.valueOf(n));
             main.Tickets.add(ticket);
             Tools.WriteTicket(main.Tickets);
@@ -546,33 +534,22 @@ public class BookingWindow extends javax.swing.JFrame {
             String to = jComboBox4.getSelectedItem().toString();
             trip.setFrom(from);
             trip.setTo(to);
-            switch (from) {
-                case "Cairo": {
-                    switch (to) {
-                        case "Alexandria":
-                            distance = Tools.GetDistance(Cairo, Alexandria);
-                        case "Giza":
-                            distance = Tools.GetDistance(Cairo, Giza);
-                    }
-                }
-                case "Alexandria": {
-                    switch (to) {
-                        case "Cairo":
-                            distance = Tools.GetDistance(Alexandria, Cairo);
-                        case "Giza":
-                            distance = Tools.GetDistance(Alexandria, Giza);
-
-                    }
-                }
-                case "Giza": {
-                    switch (to) {
-                        case "Cairo":
-                            distance = Tools.GetDistance(Giza, Cairo);
-                        case "Alexandria":
-                            distance = Tools.GetDistance(Giza, Alexandria);
-                    }
-                }
+            if (jComboBox3.getSelectedIndex()==0 && jComboBox4.getSelectedIndex()==0) {
+                distance = Tools.GetDistance(Cairo, Alexandria);
+            } else if (jComboBox3.getSelectedIndex()==0 && jComboBox4.getSelectedIndex()==1) {
+                distance = Tools.GetDistance(Cairo, Giza);
+            } else if (jComboBox3.getSelectedIndex()==1 && jComboBox4.getSelectedIndex()==0) {
+                distance = Tools.GetDistance(Alexandria, Cairo);
+            } else if (jComboBox3.getSelectedIndex()==1 && jComboBox4.getSelectedIndex()==1) {
+                distance = Tools.GetDistance(Alexandria, Giza);
             }
+
+             else if (jComboBox3.getSelectedIndex()==2 && jComboBox4.getSelectedIndex()==0) {
+                distance = Tools.GetDistance(Giza, Cairo);
+            } else if (jComboBox3.getSelectedIndex()==2 && jComboBox4.getSelectedIndex()==1) {
+                distance = Tools.GetDistance(Giza, Alexandria);
+            }
+
             trip.setDistance(distance.toString());
             Double price = (main.VipRate * main.Rate * trip.CalculatePrice());
             String FinalPrice = String.valueOf(price);
@@ -580,18 +557,13 @@ public class BookingWindow extends javax.swing.JFrame {
             trip.setNumberOfStops(jComboBox5.getSelectedItem().toString());
             Date d1 = date1.getDate();
             String strDate1 = DateFormat.getDateInstance().format(d1);
-            Date d2 = date2.getDate();
-            String strDate2 = DateFormat.getDateInstance().format(d2);
             String DateOfD = strDate1 + "," + time1.getText();
-            String DateOfR = strDate2 + "," + time2.getText();
             trip.setDateOfDeparture(DateOfD);
             {
                 ticket.setType("Internal");
             }
             ticket.setPrice(Double.parseDouble(trip.getPrice()));
             ticket.setTimeOfDeparture(DateOfD);
-            ticket.setDateOfReturn(DateOfR);
-            ticket.setTicketNumber(DateOfR);
             ticket.setTicketNumber(String.valueOf(n));
             main.Tickets.add(ticket);
             Tools.WriteTicket(main.Tickets);

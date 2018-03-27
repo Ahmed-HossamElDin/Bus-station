@@ -28,13 +28,14 @@ public abstract class Tools {
      */
     public static int Search(File file, String key) {
         int lineNumber = 0;
+        int flag = 0;
         try {
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
                 lineNumber++;
                 String lineFromFile = scanner.nextLine();
                 if (lineFromFile.contains(key)) // found the key in file
-                {
+                { flag  = 1;
                     break;
                 }
             }
@@ -84,8 +85,7 @@ public abstract class Tools {
             str = in.nextLine();
             String[] parts = str.split("/");
             VipPassenger a = new VipPassenger();
-            a.setSeat(parts[0]);
-            a.setID(parts[1]);
+            a.setUsername(parts[1]);
             a.setPassword(parts[2]);
             list.add(a);
         }
@@ -106,6 +106,7 @@ public abstract class Tools {
             a.setNumberOfStops(parts[4]);
             a.setDateOfDeparture(parts[5]);
             a.setType(parts[6]);
+            a.setTypeOfVehicle(parts[7]);
             list.add(a);
         }
     }
@@ -126,8 +127,8 @@ public abstract class Tools {
     }
 
     public static double GetDistance(City from, City to) {
-        double theta = from.getLogitude() - to.getLogitude();
-        double dist = Math.sin(degtorad(from.getLatitude())) * Math.sin(degtorad(to.getLatitude())) + Math.cos(degtorad(from.getLatitude())) * Math.cos(degtorad(to.getLatitude())) * Math.cos(degtorad(theta));
+        double theta = from.Longitude - to.Longitude;
+        double dist = Math.sin(degtorad(from.Latitude)) * Math.sin(degtorad(to.Latitude)) + Math.cos(degtorad(from.Latitude)) * Math.cos(degtorad(to.Latitude)) * Math.cos(degtorad(theta));
         dist = Math.acos(dist);
         dist = radtodeg(dist);
         dist = dist * 60 * 1.1515;
@@ -221,7 +222,7 @@ public abstract class Tools {
             PrintWriter pw = new PrintWriter(bw, autoFlush);
             for (int i = 0; i < list.size(); i++) {
                 VipPassenger d = list.get(i);
-                String data = String.valueOf(d.getSeat()) + '/' + d.getID() + '/' + d.getPassword();
+                String data = String.valueOf(d.getUsername() + '/' + d.getPassword());
                 // System.out.println(data);
                 pw.printf(data);
                 if (i < list.size() - 1) {
@@ -253,7 +254,7 @@ public abstract class Tools {
             PrintWriter pw = new PrintWriter(bw, autoFlush);
             for (int i = 0; i < list.size(); i++) {
                 Trip d = list.get(i);
-                String data = String.valueOf(d.getTo()) + '/' + d.getFrom() + '/' + d.getPrice() + '/' + d.getDistance() + '/' + d.getNumberOfStops() + '/' + d.getDateOfDeparture()+ '/' +d.getType();
+                String data = String.valueOf(d.getTo()) + '/' + d.getFrom() + '/' + d.getPrice() + '/' + d.getDistance() + '/' + d.getNumberOfStops() + '/' + d.getDateOfDeparture()+ '/' +d.getType()+ '/' +d.getVehicle();
                 // System.out.println(data);
                 pw.printf(data);
                 if (i < list.size() - 1) {
