@@ -20,7 +20,7 @@ public class App extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(250, 360));
         setSize(new java.awt.Dimension(290, 330));
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Passenger.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Passenger.setText("Passenger");
@@ -29,8 +29,7 @@ public class App extends javax.swing.JFrame {
                 PassengerActionPerformed(evt);
             }
         });
-        getContentPane().add(Passenger);
-        Passenger.setBounds(180, 260, 95, 25);
+        getContentPane().add(Passenger, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, -1, -1));
 
         Employee.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Employee.setText("Employee");
@@ -39,15 +38,14 @@ public class App extends javax.swing.JFrame {
                 EmployeeActionPerformed(evt);
             }
         });
-        getContentPane().add(Employee);
-        Employee.setBounds(40, 260, 90, 30);
+        getContentPane().add(Employee, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 90, 30));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Choose type of user :");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(90, 220, 148, 17);
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(-30, 0, 340, 330);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp_pc\\Documents\\GitHub\\kaisaaa\\src\\Webp.net-resizeimage (1).jpg")); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 330));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

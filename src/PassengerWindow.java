@@ -31,6 +31,7 @@ public class PassengerWindow extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -58,9 +59,10 @@ public class PassengerWindow extends javax.swing.JFrame {
         jLabel1.setText("Choose an action :");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 159, 36));
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 122, -1, -1));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp_pc\\Desktop\\Webp.net-resizeimage (1).jpg")); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp_pc\\Documents\\GitHub\\kaisaaa\\src\\Webp.net-resizeimage (1).jpg")); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 320, 350));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -123,5 +125,6 @@ public class PassengerWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }
