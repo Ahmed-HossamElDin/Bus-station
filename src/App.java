@@ -44,7 +44,7 @@ public class App extends javax.swing.JFrame {
         jLabel1.setText("Choose type of user :");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp_pc\\Documents\\GitHub\\kaisaaa\\src\\Webp.net-resizeimage (1).jpg")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Webp.net-resizeimage (1).jpg"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 330));
 
         pack();

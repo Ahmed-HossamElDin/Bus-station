@@ -66,6 +66,8 @@ public class VehiclePickingWindow extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton3.setText("Bus");
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(576, 112, 157, 78));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/background.jpg"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 520));
 
         pack();

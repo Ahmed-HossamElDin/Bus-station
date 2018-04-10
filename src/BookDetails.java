@@ -100,19 +100,19 @@ public class BookDetails extends javax.swing.JFrame {
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 172, 238, 31));
 
         jTextField3.setEnabled(false);
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 227, 238, -1));
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 227, 238, 30));
 
         jTextField4.setEnabled(false);
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 380, 238, -1));
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 380, 238, 30));
 
         jTextField5.setEnabled(false);
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 273, 238, 37));
+        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 273, 238, 30));
 
         jTextField6.setEnabled(false);
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 328, 238, -1));
+        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 328, 238, 30));
 
         jTextField7.setEnabled(false);
-        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 68, 238, -1));
+        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 68, 238, 30));
 
         jTextField8.setEnabled(false);
         getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 435, 238, -1));

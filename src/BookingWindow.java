@@ -95,6 +95,7 @@ public class BookingWindow extends javax.swing.JFrame {
         time1 = new javax.swing.JTextField();
         time2 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -179,7 +180,7 @@ public class BookingWindow extends javax.swing.JFrame {
                 jComboBox4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 384, 153, -1));
+        getContentPane().add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 390, 153, -1));
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 206, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -260,7 +261,7 @@ public class BookingWindow extends javax.swing.JFrame {
                 jComboBox4eActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox4e, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 350, 153, -1));
+        getContentPane().add(jComboBox4e, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 360, 153, -1));
 
         jComboBox3e.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jComboBox3e.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cairo", "Alexandria", "Giza" }));
@@ -292,7 +293,10 @@ public class BookingWindow extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 530, 90, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 520, 90, -1));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/background.jpg"))); // NOI18N
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 580));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -591,6 +595,7 @@ this.setVisible(false);    }//GEN-LAST:event_jButton2ActionPerformed
     private javax.swing.JComboBox<String> jComboBox4e;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
